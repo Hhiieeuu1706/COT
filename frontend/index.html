@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COT Explorer</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    :root {
+      --bg: #eef2f7;
+      --panel: rgba(255, 255, 255, 0.92);
+      --line: #d4dde8;
+      --text: #18324a;
+      --muted: #62788d;
+      --accent: #1098ad;
+      --accent-2: #d9480f;
+      --chip: #f4f8fb;
+      --shadow: 0 18px 50px rgba(16, 24, 40, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(16, 152, 173, 0.12), transparent 24%),
+        radial-gradient(circle at top right, rgba(217, 72, 15, 0.10), transparent 20%),
+        linear-gradient(180deg, #f8fafc 0%, var(--bg) 100%);
+      color: var(--text);
+      overflow: hidden;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      height: 100vh;
+      gap: 20px;
+      padding: 24px;
+      overflow: hidden;
+    }
+
+    .sidebar, .content {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar {
+      padding: 20px;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    .content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 0;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero p { color: var(--muted); max-width: 60ch; line-height: 1.5; }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      background: var(--text);
+      color: white;
+      padding: 10px 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button.secondary {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 12px;
+      min-height: 1.3em;
+    }
+
+    .search-box {
+      width: 100%;
+      margin: 12px 0 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .category-select {
+      width: 100%;
+      margin: 12px 0 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: white;
+      color: #111827;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .category-summary {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 10px 0 8px;
+      font-weight: 700;
+    }
+
+    .section-toggle {
+      list-style: none;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 2px 0;
+    }
+
+    .section-toggle::-webkit-details-marker {
+      display: none;
+    }
+
+    .section-chevron {
+      font-size: 11px;
+      color: var(--muted);
+      transition: transform 0.15s ease;
+    }
+
+    details[open] .section-chevron {
+      transform: rotate(90deg);
+    }
+
+    .category {
+      margin-bottom: 20px;
+    }
+
+    .category h3 {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .market-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .market-card {
+      background: var(--chip);
+      border: 1px solid transparent;
+      border-radius: 12px;
+      padding: 8px;
+      min-height: 56px;
+      color: var(--text);
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    }
+
+    .market-card.has-price {
+      background: rgba(0, 150, 150, 0.2);
+    }
+
+    .market-card:hover {
+      transform: translateY(-1px);
+      border-color: rgba(16, 152, 173, 0.35);
+      box-shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
+    }
+
+    .market-card.active {
+      border-color: var(--accent);
+      background: #ebfbfd;
+    }
+
+    .market-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .market-selectable {
+      cursor: pointer;
+    }
+
+    .market-star {
+      border: 0;
+      background: transparent;
+      color: #94a3b8;
+      padding: 0;
+      min-width: 16px;
+      font-size: 14px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .market-star.saved {
+      color: #f59f00;
+    }
+
+    .market-symbol {
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.15;
+      color: #111827;
+      letter-spacing: 0.02em;
+      margin-bottom: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .market-meta {
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .segmented {
+      display: inline-flex;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .segmented button {
+      background: transparent;
+      color: var(--muted);
+      border-radius: 0;
+      padding: 10px 14px;
+    }
+
+    .segmented button.active {
+      background: var(--text);
+      color: white;
+    }
+
+    .headline {
+      margin: 4px 0 14px;
+    }
+
+    .headline h2 { margin-bottom: 6px; }
+    .headline p { color: var(--muted); font-size: 13px; }
+    .headline .data-check {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 8px;
+      line-height: 1.4;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .headline .data-check .check-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .headline .data-check .status-icon {
+      font-weight: 600;
+      min-width: 16px;
+    }
+    .headline .data-check .status-ok {
+      color: #2f9e44;
+    }
+    .headline .data-check .status-empty {
+      color: #e03131;
+    }
+    .headline .data-check .status-fetching {
+      color: #f08c00;
+    }
+    .headline .data-check .refresh-btn {
+      border: 0;
+      background: transparent;
+      color: #1098ad;
+      padding: 0;
+      margin-left: auto;
+      min-width: 24px;
+      font-size: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .headline .data-check .refresh-btn:hover {
+      text-decoration: underline;
+    }
+    .headline .data-check .refresh-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    #chart {
+      width: 100%;
+      min-height: 560px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: white;
+    }
+
+    .empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 680px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 1100px) {
+      body { overflow: auto; }
+      .layout {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+      }
+      .market-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 760px) {
+      .layout { padding: 14px; }
+      .market-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .hero { flex-direction: column; }
+      #chart, .empty { min-height: 500px; }
+      .flow-layout { grid-template-columns: 1fr; }
+      .flow-panels, .flow-ranking { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="eyebrow">COT Explorer</div>
+      <h1>Local COT dashboard</h1>
+      <p class="status" id="catalog-status">Loading market catalog...</p>
+      <select id="category-select" class="category-select"></select>
+      <div id="category-summary" class="category-summary">0 symbols</div>
+      <input id="market-search" class="search-box" type="search" placeholder="Search symbol in category">
+      <div id="markets"></div>
+    </aside>
+
+    <main class="content">
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Non-Commercial Positioning</div>
+          <h2>Weekly COT with price overlay</h2>
+          <p>Pick a market on the left. The main panel plots non-commercial long, short, or net positioning above the underlying price, with a shared time axis.</p>
+        </div>
+        <div>
+          <button id="refresh-button">Refresh COT cache</button>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <div class="segmented" id="metric-toggle">
+          <button data-metric="long" class="active">Long</button>
+          <button data-metric="short">Short</button>
+          <button data-metric="net">Net</button>
+        </div>
+        <button class="secondary" id="reload-market">Reload selected market</button>
+        <div class="segmented" id="view-toggle">
+          <button data-view="market" class="active">Market View</button>
+        </div>
+      </div>
+
+      <div id="market-view">
+        <div class="headline">
+          <h2 id="market-title">Select a market</h2>
+          <p id="market-subtitle">Categories and markets are built from local cached COT data.</p>
+          <div id="data-checks" class="data-check"></div>
+        </div>
+
+        <div id="chart-wrapper">
+          <div class="empty">Choose a market from the left panel.</div>
+        </div>
+      </div>
+
+
+    </main>
+  </div>
+
+  <script>
+    const state = {
+      catalog: [],
+      selectedMarketKey: null,
+      selectedMetric: 'long',
+      selectedSeries: null,
+      loadRequestId: 0,
+      searchText: '',
+      selectedCategory: '',
+      savedMarketKeys: loadSavedMarketKeys(),
+      activeView: 'market',
+      seriesWatchIntervalId: null,
+      isFetchingPrice: false,
+    };
+
+    function loadSavedMarketKeys() {
+      try {
+        const raw = localStorage.getItem('cot.savedMarkets');
+        const parsed = raw ? JSON.parse(raw) : [];
+        return new Set(Array.isArray(parsed) ? parsed : []);
+      } catch {
+        return new Set();
+      }
+    }
+
+    function persistSavedMarketKeys() {
+      localStorage.setItem('cot.savedMarkets', JSON.stringify(Array.from(state.savedMarketKeys)));
+    }
+
+    function isSavedMarket(marketKey) {
+      return state.savedMarketKeys.has(marketKey);
+    }
+
+    function toggleSavedMarket(marketKey) {
+      if (state.savedMarketKeys.has(marketKey)) {
+        state.savedMarketKeys.delete(marketKey);
+      } else {
+        state.savedMarketKeys.add(marketKey);
+      }
+      persistSavedMarketKeys();
+      renderCatalog();
+    }
+
+    const marketContainer = document.getElementById('markets');
+    const categorySelect = document.getElementById('category-select');
+    const categorySummary = document.getElementById('category-summary');
+    const catalogStatus = document.getElementById('catalog-status');
+    const marketTitle = document.getElementById('market-title');
+    const marketSubtitle = document.getElementById('market-subtitle');
+    const chartWrapper = document.getElementById('chart-wrapper');
+    const marketView = document.getElementById('market-view');
+
+    function setActiveView(view) {
+      state.activeView = view;
+      const isMarket = view === 'market';
+      marketView.style.display = isMarket ? '' : 'none';
+      document.querySelectorAll('#view-toggle button').forEach((button) => {
+        button.classList.toggle('active', button.dataset.view === view);
+      });
+    }
+
+    categorySelect.addEventListener('change', (event) => {
+      state.selectedCategory = event.target.value;
+      renderCatalog();
+      const first = getVisibleMarkets()[0];
+      if (first && first.market_key !== state.selectedMarketKey) {
+        loadMarket(first.market_key);
+      }
+    });
+
+    document.getElementById('market-search').addEventListener('input', (event) => {
+      state.searchText = event.target.value.trim().toLowerCase();
+      renderCatalog();
+    });
+
+    document.getElementById('metric-toggle').addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-metric]');
+      if (!button) return;
+      state.selectedMetric = button.dataset.metric;
+      document.querySelectorAll('#metric-toggle button').forEach((item) => {
+        item.classList.toggle('active', item === button);
+      });
+      if (state.selectedSeries) {
+        renderChart(state.selectedSeries);
+      }
+    });
+
+    document.getElementById('reload-market').addEventListener('click', () => {
+      if (state.selectedMarketKey) {
+        loadMarket(state.selectedMarketKey, true);
+      }
+    });
+
+    document.getElementById('view-toggle').addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-view]');
+      if (!button) return;
+      setActiveView(button.dataset.view);
+    });
+
+    document.getElementById('refresh-button').addEventListener('click', async () => {
+      catalogStatus.textContent = 'Refreshing local COT cache...';
+      try {
+        const response = await fetch('/api/refresh', { method: 'POST' });
+        if (!response.ok) {
+          throw new Error(`Refresh failed with status ${response.status}`);
+        }
+        await loadCatalog(true);
+        if (state.selectedMarketKey) {
+          await loadMarket(state.selectedMarketKey, true);
+        }
+        catalogStatus.textContent = 'COT cache refreshed.';
+      } catch (error) {
+        console.error(error);
+        catalogStatus.textContent = 'Refresh failed. Showing last local cache.';
+      }
+    });
+
+    async function loadCatalog(force = false) {
+      const response = await fetch(`/api/catalog${force ? '?force=1' : ''}`);
+      const payload = await response.json();
+      state.catalog = payload.categories || [];
+      if (!state.selectedCategory && state.catalog.length) {
+        state.selectedCategory = state.catalog[0].name;
+      }
+      renderCategoryDropdown();
+      renderCatalog();
+      catalogStatus.textContent = `${state.catalog.length} categories loaded.`;
+
+      if (state.activeView === 'flow') {
+        flowRotationTab.bootstrapFilters();
+      }
+
+      const first = getVisibleMarkets()[0];
+      if (!state.selectedMarketKey && first) {
+        loadMarket(first.market_key);
+      }
+    }
+
+    function renderCategoryDropdown() {
+      categorySelect.innerHTML = '';
+      for (const category of state.catalog) {
+        const option = document.createElement('option');
+        option.value = category.name;
+        option.textContent = `${category.name} (${category.markets.length})`;
+        if (category.name === state.selectedCategory) {
+          option.selected = true;
+        }
+        categorySelect.appendChild(option);
+      }
+    }
+
+    function getVisibleMarkets() {
+      const selected = state.catalog.find((item) => item.name === state.selectedCategory);
+      if (!selected) {
+        return [];
+      }
+      const filtered = selected.markets.filter((market) => {
+        if (!state.searchText) return true;
+        const symbol = getMarketSymbol(market);
+        return `${symbol} ${market.market_name} ${market.price_ticker || ''}`.toLowerCase().includes(state.searchText);
+      });
+      return filtered.sort((a, b) => {
+        const savedDelta = Number(isSavedMarket(b.market_key)) - Number(isSavedMarket(a.market_key));
+        if (savedDelta !== 0) {
+          return savedDelta;
+        }
+        return (b.latest_report_date || '').localeCompare(a.latest_report_date || '') || getMarketSymbol(a).localeCompare(getMarketSymbol(b));
+      });
+    }
+
+    function renderMarketGrid(markets, sectionLabel, options = {}) {
+      const { collapsed = false } = options;
+      const section = document.createElement('section');
+      section.className = 'category';
+      if (collapsed) {
+        section.innerHTML = `
+          <details>
+            <summary class="section-title section-toggle">
+              <span>${sectionLabel}</span>
+              <span class="section-chevron">▶</span>
+            </summary>
+            <div class="market-grid"></div>
+          </details>
+        `;
+      } else {
+        section.innerHTML = `<div class="section-title">${sectionLabel}</div><div class="market-grid"></div>`;
+      }
+      const grid = section.querySelector('.market-grid');
+
+      for (const market of markets) {
+        const symbol = getMarketSymbol(market);
+        const card = document.createElement('div');
+        card.className = `market-card${market.market_key === state.selectedMarketKey ? ' active' : ''}${market.has_price_data ? ' has-price' : ''}`;
+        card.title = market.market_name;
+        card.tabIndex = 0;
+        card.innerHTML = `
+          <div class="market-card-header">
+            <div class="market-symbol">${symbol}</div>
+            <button class="market-star${isSavedMarket(market.market_key) ? ' saved' : ''}" type="button" aria-label="Save symbol">★</button>
+          </div>
+          <div class="market-meta">${market.latest_report_date}</div>
+        `;
+        card.addEventListener('click', () => loadMarket(market.market_key));
+        card.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            loadMarket(market.market_key);
+          }
+        });
+        card.classList.add('market-selectable');
+        const starButton = card.querySelector('.market-star');
+        starButton.addEventListener('click', (event) => {
+          event.stopPropagation();
+          toggleSavedMarket(market.market_key);
+        });
+        grid.appendChild(card);
+      }
+
+      marketContainer.appendChild(section);
+    }
+
+    function renderCatalog() {
+      const visibleMarkets = getVisibleMarkets();
+      categorySummary.textContent = `${visibleMarkets.length} symbols`;
+
+      marketContainer.innerHTML = '';
+      if (!visibleMarkets.length) {
+        marketContainer.innerHTML = '<div class="status">No symbols in this filter.</div>';
+        return;
+      }
+
+      const newestDate = visibleMarkets[0]?.latest_report_date || '';
+      const savedMarkets = visibleMarkets.filter((market) => isSavedMarket(market.market_key));
+      const unsavedMarkets = visibleMarkets.filter((market) => !isSavedMarket(market.market_key));
+      const freshMarkets = unsavedMarkets.filter((market) => market.latest_report_date === newestDate);
+      const outdatedMarkets = unsavedMarkets.filter((market) => market.latest_report_date !== newestDate);
+
+      if (savedMarkets.length) {
+        renderMarketGrid(savedMarkets, `Saved (${savedMarkets.length})`);
+      }
+      renderMarketGrid(freshMarkets, `Active (${freshMarkets.length})`);
+      if (outdatedMarkets.length) {
+        renderMarketGrid(outdatedMarkets, `Outdated (${outdatedMarkets.length})`, { collapsed: true });
+      }
+    }
+
+    function getMarketSymbol(market) {
+      const ticker = (market.price_ticker || '').toUpperCase().trim();
+      if (ticker) {
+        return ticker.replace('=F', '').replace('-USD', '').replace('^', '');
+      }
+      const base = (market.market_name || '').split(' - ')[0].toUpperCase();
+      const words = base.split(/[^A-Z0-9]+/).filter(Boolean).filter((w) => !['AND', 'THE', 'OF', 'NO'].includes(w));
+      const initials = words.slice(0, 4).map((w) => w[0]).join('');
+      if (initials.length >= 2) {
+        return initials;
+      }
+      const compact = words.join('');
+      return compact.slice(0, 6) || (market.market_key || '').slice(0, 6).toUpperCase();
+    }
+
+    async function loadMarket(marketKey, force = false) {
+      stopSeriesWatcher();
+      const requestId = ++state.loadRequestId;
+      state.selectedMarketKey = marketKey;
+      renderCatalog();
+      marketTitle.textContent = 'Loading market...';
+      marketSubtitle.textContent = 'Fetching local series and price overlay.';
+      chartWrapper.innerHTML = '<div class="empty">Loading series...</div>';
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 150000);
+
+      try {
+        const response = await fetch(`/api/series/${marketKey}${force ? '?force=1' : ''}`, {
+          signal: controller.signal,
+        });
+        if (requestId !== state.loadRequestId) {
+          return;
+        }
+        if (!response.ok) {
+          state.isFetchingPrice = false;
+          chartWrapper.innerHTML = '<div class="empty">Failed to load market data.</div>';
+          return;
+        }
+        state.selectedSeries = await response.json();
+        if (requestId !== state.loadRequestId) {
+          return;
+        }
+        state.isFetchingPrice = false;
+        renderChart(state.selectedSeries);
+        startSeriesWatcher(marketKey, state.selectedSeries.updated_at);
+      } catch (error) {
+        if (requestId !== state.loadRequestId) {
+          return;
+        }
+        state.isFetchingPrice = false;
+        const isTimeout = error && error.name === 'AbortError';
+        const errorMsg = isTimeout 
+          ? 'Loading series timed out (150s limit). Price data may not be available for this symbol, or network is slow. Try again later.' 
+          : 'Failed to load market data.';
+        chartWrapper.innerHTML = `<div class="empty">${errorMsg}</div>`;
+      } finally {
+        clearTimeout(timeoutId);
+      }
+    }
+
+    function stopSeriesWatcher() {
+      if (state.seriesWatchIntervalId) {
+        clearInterval(state.seriesWatchIntervalId);
+        state.seriesWatchIntervalId = null;
+      }
+    }
+
+    function startSeriesWatcher(marketKey, currentUpdatedAt) {
+      stopSeriesWatcher();
+      if (!marketKey || !currentUpdatedAt) {
+        return;
+      }
+
+      state.seriesWatchIntervalId = setInterval(async () => {
+        if (state.selectedMarketKey !== marketKey) {
+          stopSeriesWatcher();
+          return;
+        }
+
+        try {
+          const response = await fetch(`/api/series-refresh-status/${marketKey}`);
+          if (!response.ok) {
+            return;
+          }
+          const status = await response.json();
+          const latest = status.cached_updated_at;
+          if (latest && latest > currentUpdatedAt) {
+            stopSeriesWatcher();
+            await loadMarket(marketKey, false);
+          }
+        } catch {
+          // Silent poll error; next interval will retry.
+        }
+      }, 6000);
+    }
+
+
+
+    function renderChart(payload) {
+      marketTitle.textContent = payload.market_name;
+      marketSubtitle.textContent = `${payload.category} | ${payload.price_ticker || 'Price overlay unavailable'} | Updated ${new Date(payload.updated_at).toLocaleString()}`;
+      
+      // Build data check lines
+      const dataChecksEl = document.getElementById('data-checks');
+      const cotLatestDate = payload.series && payload.series.length > 0 ? payload.series[payload.series.length - 1].date : null;
+      const priceLatestDate = payload.price_series && payload.price_series.length > 0 ? payload.price_series[payload.price_series.length - 1].date : null;
+      
+      const priceStatus = state.isFetchingPrice ? 'Fetching price...' : (priceLatestDate ? priceLatestDate : 'No price data available');
+      const priceStatusClass = state.isFetchingPrice ? 'status-fetching' : (priceLatestDate ? 'status-ok' : 'status-empty');
+      const priceIcon = state.isFetchingPrice ? '⟳' : (priceLatestDate ? '✓' : '✗');
+      
+      let checksHTML = '<div class="check-line"><span class="status-icon status-ok">✓</span><span>COT Data: ' + (cotLatestDate ? `${cotLatestDate}` : 'No data') + '</span><button class="refresh-btn" data-action="refresh-cot">Refresh</button></div>';
+      checksHTML += '<div class="check-line"><span class="status-icon ' + priceStatusClass + '">' + priceIcon + '</span><span>Price Data: ' + priceStatus + '</span><button class="refresh-btn" data-action="refresh-price" ' + (state.isFetchingPrice ? 'disabled' : '') + '>Refresh</button></div>';
+      
+      dataChecksEl.innerHTML = checksHTML;
+      
+      // Add event listeners to refresh buttons
+      dataChecksEl.querySelectorAll('.refresh-btn').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const action = btn.dataset.action;
+          if (action === 'refresh-cot') {
+            if (state.selectedMarketKey) {
+              loadMarket(state.selectedMarketKey, true);
+            }
+          } else if (action === 'refresh-price') {
+            if (state.selectedMarketKey && state.selectedSeries) {
+              state.isFetchingPrice = true;
+              renderChart(state.selectedSeries);
+              loadMarket(state.selectedMarketKey, true);
+            }
+          }
+        });
+      });
+      
+      chartWrapper.innerHTML = '<div id="chart"></div>';
+
+      const dates = payload.series.map((item) => item.date);
+      const metricLabelMap = {
+        long: 'Non-Commercial Long',
+        short: 'Non-Commercial Short',
+        net: 'Non-Commercial Net',
+      };
+      const metricColorMap = {
+        long: '#2f9e44',
+        short: '#e03131',
+        net: '#f08c00',
+      };
+      const metricValues = payload.series.map((item) => item[state.selectedMetric]);
+      const oiValues = payload.series.map((item) => item.open_interest);
+      const priceDates = payload.price_series.map((item) => item.date);
+      const priceValues = payload.price_series.map((item) => item.close);
+
+      const traces = [
+        {
+          x: dates,
+          y: metricValues,
+          type: 'scatter',
+          mode: 'lines',
+          name: metricLabelMap[state.selectedMetric],
+          line: { color: metricColorMap[state.selectedMetric], width: 2.5 },
+          xaxis: 'x',
+          yaxis: 'y',
+        },
+        {
+          x: dates,
+          y: oiValues,
+          type: 'scatter',
+          mode: 'lines',
+          name: 'Open Interest',
+          line: { color: '#e03131', width: 2.3 },
+          xaxis: 'x2',
+          yaxis: 'y3',
+        },
+      ];
+
+      if (priceDates.length) {
+        traces.push({
+          x: priceDates,
+          y: priceValues,
+          type: 'scatter',
+          mode: 'lines',
+          name: payload.price_ticker,
+          line: { color: '#1c7ed6', width: 2 },
+          xaxis: 'x',
+          yaxis: 'y2',
+        });
+        traces.push({
+          x: priceDates,
+          y: priceValues,
+          type: 'scatter',
+          mode: 'lines',
+          name: `${payload.price_ticker} (OI)`,
+          line: { color: '#1c7ed6', width: 1.9 },
+          xaxis: 'x2',
+          yaxis: 'y4',
+          showlegend: false,
+        });
+      }
+
+      const layout = {
+        margin: { l: 56, r: 28, t: 26, b: 46 },
+        height: 900,
+        paper_bgcolor: 'white',
+        plot_bgcolor: 'white',
+        hovermode: 'x unified',
+        spikedistance: -1,
+        hoverdistance: 100,
+        xaxis: {
+          type: 'date',
+          domain: [0, 1],
+          anchor: 'y',
+          matches: 'x2',
+          showticklabels: false,
+          showgrid: true,
+          gridcolor: '#e7edf3',
+          tickfont: { color: '#62788d' },
+          showspikes: true,
+          spikemode: 'across+toaxis',
+          spikesnap: 'cursor',
+          spikecolor: '#6c7a89',
+          spikethickness: 1,
+        },
+        xaxis2: {
+          type: 'date',
+          domain: [0, 1],
+          anchor: 'y3',
+          showgrid: true,
+          gridcolor: '#e7edf3',
+          tickfont: { color: '#62788d' },
+          showspikes: true,
+          spikemode: 'across+toaxis',
+          spikesnap: 'cursor',
+          spikecolor: '#6c7a89',
+          spikethickness: 1,
+          rangeslider: {
+            visible: true,
+            thickness: 0.1,
+            bgcolor: '#f4f8fb',
+            bordercolor: '#d4dde8',
+            borderwidth: 1,
+          },
+          rangeselector: {
+            buttons: [
+              { count: 6, label: '6m', step: 'month', stepmode: 'backward' },
+              { count: 1, label: '1y', step: 'year', stepmode: 'backward' },
+              { count: 3, label: '3y', step: 'year', stepmode: 'backward' },
+              { step: 'all', label: 'All' },
+            ],
+            x: 0,
+            y: 1.12,
+            xanchor: 'left',
+            yanchor: 'top',
+          },
+        },
+        yaxis: {
+          title: metricLabelMap[state.selectedMetric],
+          domain: [0.56, 1],
+          showgrid: true,
+          gridcolor: '#e7edf3',
+          zeroline: true,
+          zerolinecolor: '#d4dde8',
+          showspikes: true,
+          spikemode: 'across+toaxis',
+          spikesnap: 'cursor',
+          spikecolor: '#6c7a89',
+          spikethickness: 1,
+        },
+        yaxis2: {
+          title: priceDates.length ? 'Price' : 'Price unavailable',
+          overlaying: 'y',
+          side: 'right',
+          showgrid: false,
+          showspikes: true,
+          spikemode: 'across+toaxis',
+          spikesnap: 'cursor',
+          spikecolor: '#6c7a89',
+          spikethickness: 1,
+        },
+        yaxis3: {
+          title: 'Open Interest',
+          domain: [0.12, 0.48],
+          showgrid: true,
+          gridcolor: '#e7edf3',
+          showspikes: true,
+          spikemode: 'across+toaxis',
+          spikesnap: 'cursor',
+          spikecolor: '#6c7a89',
+          spikethickness: 1,
+        },
+        yaxis4: {
+          title: priceDates.length ? 'Price' : 'Price unavailable',
+          overlaying: 'y3',
+          side: 'right',
+          showgrid: false,
+          showspikes: true,
+          spikemode: 'across+toaxis',
+          spikesnap: 'cursor',
+          spikecolor: '#6c7a89',
+          spikethickness: 1,
+        },
+        legend: {
+          orientation: 'h',
+          yanchor: 'bottom',
+          y: 1.02,
+          xanchor: 'left',
+          x: 0,
+        },
+        annotations: priceDates.length ? [] : [{
+          text: 'No price mapping or price history available for this market yet.',
+          xref: 'paper',
+          yref: 'paper',
+          x: 0.5,
+          y: 0.08,
+          showarrow: false,
+          font: { color: '#62788d' },
+        }],
+      };
+
+      Plotly.newPlot('chart', traces, layout, { responsive: true, displaylogo: false });
+    }
+
+
+
+    loadCatalog().catch((error) => {
+      console.error(error);
+      catalogStatus.textContent = 'Failed to load catalog. Click Refresh COT cache or reopen START.bat.';
+    });
+  </script>
+</body>
+</html>

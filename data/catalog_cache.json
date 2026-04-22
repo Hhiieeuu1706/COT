@@ -1,0 +1,3836 @@
+{
+  "updated_at": "2026-04-22T07:07:43.907223",
+  "source_updated_at": "2026-04-22T07:07:37.836173",
+  "report_type": "legacy_fut",
+  "schema_version": 4,
+  "categories": [
+    {
+      "name": "Natural Gas and Products",
+      "markets": [
+        {
+          "market_key": "waha-index-ice-futures-energy-div",
+          "market_name": "WAHA INDEX - ICE FUTURES ENERGY DIV",
+          "symbol": "WI",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "waha-fin-basis-ice-futures-energy-div",
+          "market_name": "WAHA FIN BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "WFB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "transco-zone-6-monthly-index-ice-futures-energy-div",
+          "market_name": "TRANSCO ZONE 6 MONTHLY INDEX - ICE FUTURES ENERGY DIV",
+          "symbol": "TZ6M",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "transco-zone-6-basis-ice-futures-energy-div",
+          "market_name": "TRANSCO ZONE 6 BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "TZ6B",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "transco-zone-5-south-basis-ice-futures-energy-div",
+          "market_name": "Transco Zone 5 South Basis - ICE FUTURES ENERGY DIV",
+          "symbol": "TZ5S",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "tgt-zone-1-basis-ice-futures-energy-div",
+          "market_name": "TGT ZONE 1 BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "TZ1B",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "transco-station-85-zone-4-basi-ice-futures-energy-div",
+          "market_name": "TRANSCO STATION 85-ZONE 4 BASI - ICE FUTURES ENERGY DIV",
+          "symbol": "TS8Z",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "transco-stn-85-monthly-index-ice-futures-energy-div",
+          "market_name": "TRANSCO STN 85 MONTHLY INDEX - ICE FUTURES ENERGY DIV",
+          "symbol": "TS8M",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "tetco-m2-index-receipts-ice-futures-energy-div",
+          "market_name": "TETCO M2 Index (Receipts) - ICE FUTURES ENERGY DIV",
+          "symbol": "TMIR",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "tetco-m3-index-ice-futures-energy-div",
+          "market_name": "TETCO M3 INDEX - ICE FUTURES ENERGY DIV",
+          "symbol": "TMI",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "tetco-m2-basis-receipts-ice-futures-energy-div",
+          "market_name": "TETCO M2 Basis (Receipts) - ICE FUTURES ENERGY DIV",
+          "symbol": "TMBR",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "tetco-m3-basis-ice-futures-energy-div",
+          "market_name": "TETCO M3 BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "TMB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "transco-leidy-basis-ice-futures-energy-div",
+          "market_name": "TRANSCO LEIDY BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "TLB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "tco-basis-ice-futures-energy-div",
+          "market_name": "TCO Basis - ICE FUTURES ENERGY DIV",
+          "symbol": "TB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "sonat-tier-1-pool-zone-0-ice-futures-energy-div",
+          "market_name": "SONAT - TIER 1 POOL (ZONE 0) - ICE FUTURES ENERGY DIV",
+          "symbol": "SONAT",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "socal-border-fin-basis-ice-futures-energy-div",
+          "market_name": "SOCAL BORDER FIN BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "SBFB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "rex-zone-3-index-ice-futures-energy-div",
+          "market_name": "REX ZONE 3 INDEX - ICE FUTURES ENERGY DIV",
+          "symbol": "RZ3I",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "rex-zone-3-basis-ice-futures-energy-div",
+          "market_name": "REX ZONE 3 BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "RZ3B",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "propane-new-york-mercantile-exchange",
+          "market_name": "PROPANE - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "PROPAN",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "propane-opis-mt-belv-nontet-fp-ice-futures-energy-div",
+          "market_name": "PROPANE OPIS MT BELV NONTET FP - ICE FUTURES ENERGY DIV",
+          "symbol": "POMB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "propane-opis-mt-belvieu-tet-fp-ice-futures-energy-div",
+          "market_name": "PROPANE OPIS MT BELVIEU TET FP - ICE FUTURES ENERGY DIV",
+          "symbol": "POMB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "propane-opis-conway-inwell-fp-ice-futures-energy-div",
+          "market_name": "PROPANE OPIS CONWAY INWELL FP - ICE FUTURES ENERGY DIV",
+          "symbol": "POCI",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "propane-non-ldh-mt-bel-new-york-mercantile-exchange",
+          "market_name": "PROPANE NON-LDH MT BEL - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "PNLM",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pg-e-citygate-fin-basis-ice-futures-energy-div",
+          "market_name": "PG&E CITYGATE FIN BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "PECF",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "panhandle-basis-ice-futures-energy-div",
+          "market_name": "PANHANDLE BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "PB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "propane-argus-saudi-cp-fp-ice-futures-energy-div",
+          "market_name": "PROPANE ARGUS SAUDI CP FP - ICE FUTURES ENERGY DIV",
+          "symbol": "PASC",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "propane-argus-far-east-mini-ice-futures-energy-div",
+          "market_name": "PROPANE ARGUS FAR EAST MINI - ICE FUTURES ENERGY DIV",
+          "symbol": "PAFE",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nng-ventura-basis-ice-futures-energy-div",
+          "market_name": "NNG VENTURA BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "NVB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ngpl-txok-basis-ice-futures-energy-div",
+          "market_name": "NGPL TXOK BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "NTB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nwp-rockies-index-ice-futures-energy-div",
+          "market_name": "NWP Rockies Index - ICE FUTURES ENERGY DIV",
+          "symbol": "NRI",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nwp-rockies-fin-basis-ice-futures-energy-div",
+          "market_name": "NWP ROCKIES FIN BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "NRFB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ngpl-midcont-basis-ice-futures-energy-div",
+          "market_name": "NGPL MIDCONT BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "NMB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nat-gaslne-opis-mt-b-nontet-fp-ice-futures-energy-div",
+          "market_name": "NAT GASLNE OPIS MT B NONTET FP - ICE FUTURES ENERGY DIV",
+          "symbol": "NGOM",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nat-gas-nyme-new-york-mercantile-exchange",
+          "market_name": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "NGN",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nat-gas-ld1-for-gdd-texok-ice-futures-energy-div",
+          "market_name": "NAT GAS LD1 for GDD -TEXOK - ICE FUTURES ENERGY DIV",
+          "symbol": "NGLF",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nat-gas-ice-pen-ice-futures-energy-div",
+          "market_name": "NAT GAS ICE PEN - ICE FUTURES ENERGY DIV",
+          "symbol": "NG",
+          "category": "Natural Gas and Products",
+          "price_ticker": "NG=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "nat-gas-ice-ld1-ice-futures-energy-div",
+          "market_name": "NAT GAS ICE LD1 - ICE FUTURES ENERGY DIV",
+          "symbol": "NG",
+          "category": "Natural Gas and Products",
+          "price_ticker": "NG=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "michcon-financial-index-ice-futures-energy-div",
+          "market_name": "MICHCON FINANCIAL INDEX - ICE FUTURES ENERGY DIV",
+          "symbol": "MFI",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "mt-belv-nat-gasoline-opis-new-york-mercantile-exchange",
+          "market_name": "MT BELV NAT GASOLINE OPIS - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "MBNG",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "mt-belv-norm-butane-opis-new-york-mercantile-exchange",
+          "market_name": "MT BELV NORM BUTANE OPIS - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "MBNB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "mt-belvieu-ethane-opis-new-york-mercantile-exchange",
+          "market_name": "MT BELVIEU ETHANE OPIS - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "MBEO",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "michcon-basis-ice-futures-energy-div",
+          "market_name": "MICHCON BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "MB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "houston-ship-channel-index-ice-futures-energy-div",
+          "market_name": "HOUSTON SHIP CHANNEL (INDEX) - ICE FUTURES ENERGY DIV",
+          "symbol": "HSCI",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "henry-hub-penultimate-nat-gas-new-york-mercantile-exchange",
+          "market_name": "HENRY HUB PENULTIMATE NAT GAS - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "HHPN",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "henry-hub-penultimate-fin-new-york-mercantile-exchange",
+          "market_name": "HENRY HUB PENULTIMATE FIN - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "HHPF",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "henry-hub-last-day-fin-new-york-mercantile-exchange",
+          "market_name": "HENRY HUB LAST DAY FIN - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "HHLD",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "henry-hub-index-ice-futures-energy-div",
+          "market_name": "HENRY HUB INDEX - ICE FUTURES ENERGY DIV",
+          "symbol": "HHI",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "henry-hub-basis-ice-futures-energy-div",
+          "market_name": "HENRY HUB BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "HHB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "henry-hub-new-york-mercantile-exchange",
+          "market_name": "HENRY HUB - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "HH",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "hsc-fin-basis-ice-futures-energy-div",
+          "market_name": "HSC FIN BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "HFB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ep-san-juan-basis-ice-futures-energy-div",
+          "market_name": "EP SAN JUAN BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "ESJB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ethane-mt-belv-enterprise-ice-futures-energy-div",
+          "market_name": "ETHANE, MT. BELV-ENTERPRISE - ICE FUTURES ENERGY DIV",
+          "symbol": "EMBE",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "dominion-south-point-basis-ice-futures-energy-div",
+          "market_name": "DOMINION - SOUTH POINT (BASIS) - ICE FUTURES ENERGY DIV",
+          "symbol": "DOMINI",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "dominion-south-point-ice-futures-energy-div",
+          "market_name": "DOMINION - SOUTH POINT - ICE FUTURES ENERGY DIV",
+          "symbol": "DOMINI",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "cig-rockies-basis-ice-futures-energy-div",
+          "market_name": "CIG ROCKIES BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "CRB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "conway-propane-opis-new-york-mercantile-exchange",
+          "market_name": "CONWAY PROPANE (OPIS) - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "CPO",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "cg-mainline-basis-ice-futures-energy-div",
+          "market_name": "CG Mainline Basis - ICE FUTURES ENERGY DIV",
+          "symbol": "CMB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "chicago-fin-basis-ice-futures-energy-div",
+          "market_name": "CHICAGO FIN BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "CFB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "chicago-citygate-index-ice-futures-energy-div",
+          "market_name": "CHICAGO CITYGATE (INDEX) - ICE FUTURES ENERGY DIV",
+          "symbol": "CCI",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "butane-opis-mt-belv-nontet-fp-ice-futures-energy-div",
+          "market_name": "BUTANE OPIS MT BELV NONTET FP - ICE FUTURES ENERGY DIV",
+          "symbol": "BOMB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "argus-propane-far-east-index-new-york-mercantile-exchange",
+          "market_name": "ARGUS PROPANE FAR EAST INDEX - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "APFE",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "argus-far-east-propane-ice-futures-energy-div",
+          "market_name": "ARGUS FAR EAST PROPANE - ICE FUTURES ENERGY DIV",
+          "symbol": "AFEP",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "aeco-fin-basis-ice-futures-energy-div",
+          "market_name": "AECO FIN BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "AFB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "algonquin-citygates-basis-ice-futures-energy-div",
+          "market_name": "ALGONQUIN CITYGATES BASIS - ICE FUTURES ENERGY DIV",
+          "symbol": "ACB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "argus-cif-ara-lg-finl-propane-ice-futures-energy-div",
+          "market_name": "ARGUS CIF ARA Lg Finl Propane - ICE FUTURES ENERGY DIV",
+          "symbol": "ACAL",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "henry-hub-tailgate-louisiana-basis-ice-futures-energy-div",
+          "market_name": "HENRY HUB - TAILGATE LOUISIANA (BASIS) - ICE FUTURES ENERGY DIV",
+          "symbol": "HH",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2022-01-18",
+          "has_price_data": false
+        },
+        {
+          "market_key": "henry-hub-tailgate-louisiana-index-ice-futures-energy-div",
+          "market_name": "HENRY HUB - TAILGATE LOUISIANA (INDEX) - ICE FUTURES ENERGY DIV",
+          "symbol": "HH",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2022-01-18",
+          "has_price_data": false
+        },
+        {
+          "market_key": "propane-non-ldh-mt-bel-swap-new-york-mercantile-exchange",
+          "market_name": "PROPANE NON-LDH MT BEL SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "PNLM",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2018-12-18",
+          "has_price_data": false
+        },
+        {
+          "market_key": "mt-belv-nat-gasoline-opis-swap-new-york-mercantile-exchange",
+          "market_name": "MT BELV NAT GASOLINE OPIS SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "MBNG",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2018-12-18",
+          "has_price_data": false
+        },
+        {
+          "market_key": "henry-hub-penultimate-gas-swap-new-york-mercantile-exchange",
+          "market_name": "HENRY HUB PENULTIMATE GAS SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "HHPG",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2018-12-18",
+          "has_price_data": false
+        },
+        {
+          "market_key": "henry-hub-nat-gas-finl-10000-nasdaq-futures",
+          "market_name": "HENRY HUB NAT GAS FINL-10000 - NASDAQ FUTURES",
+          "symbol": "HHNG",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2018-09-25",
+          "has_price_data": false
+        },
+        {
+          "market_key": "henry-hub-swap-new-york-mercantile-exchange",
+          "market_name": "HENRY HUB SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "HHS",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2018-07-10",
+          "has_price_data": false
+        },
+        {
+          "market_key": "natural-gas-ice-henry-hub-ld1-ice-futures-energy-div",
+          "market_name": "NATURAL GAS ICE HENRY HUB LD1 - ICE FUTURES ENERGY DIV",
+          "symbol": "NGIH",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2018-05-01",
+          "has_price_data": false
+        },
+        {
+          "market_key": "natural-gas-ice-henry-hub-ice-futures-energy-div",
+          "market_name": "NATURAL GAS ICE HENRY HUB - ICE FUTURES ENERGY DIV",
+          "symbol": "NGIH",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2018-01-23",
+          "has_price_data": false
+        },
+        {
+          "market_key": "mt-belv-norm-butane-opis-swap-new-york-mercantile-exchange",
+          "market_name": "MT BELV NORM BUTANE OPIS SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "MBNB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2016-01-05",
+          "has_price_data": false
+        },
+        {
+          "market_key": "conway-propane-opis-swap-new-york-mercantile-exchange",
+          "market_name": "CONWAY PROPANE (OPIS) SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "CPOS",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2016-01-05",
+          "has_price_data": false
+        },
+        {
+          "market_key": "mt-belvieu-ethane-opis-swap-new-york-mercantile-exchange",
+          "market_name": "MT BELVIEU ETHANE OPIS SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "MBEO",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2015-12-29",
+          "has_price_data": false
+        },
+        {
+          "market_key": "waha-fin-basis-ice-otc",
+          "market_name": "WAHA FIN BASIS - ICE OTC",
+          "symbol": "WFB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2012-10-09",
+          "has_price_data": false
+        },
+        {
+          "market_key": "socal-border-fin-basis-ice-otc",
+          "market_name": "SOCAL BORDER FIN BASIS - ICE OTC",
+          "symbol": "SBFB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2012-10-09",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pg-e-citygate-fin-basis-ice-otc",
+          "market_name": "PG&E CITYGATE FIN BASIS - ICE OTC",
+          "symbol": "PECF",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2012-10-09",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nwp-rockies-fin-basis-ice-otc",
+          "market_name": "NWP ROCKIES FIN BASIS - ICE OTC",
+          "symbol": "NRFB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2012-10-09",
+          "has_price_data": false
+        },
+        {
+          "market_key": "natural-gas-ice-henry-hub-ice-otc",
+          "market_name": "NATURAL GAS ICE HENRY HUB - ICE OTC",
+          "symbol": "NGIH",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2012-10-09",
+          "has_price_data": false
+        },
+        {
+          "market_key": "hsc-fin-basis-ice-otc",
+          "market_name": "HSC FIN BASIS - ICE OTC",
+          "symbol": "HFB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2012-10-09",
+          "has_price_data": false
+        },
+        {
+          "market_key": "chicago-fin-basis-ice-otc",
+          "market_name": "CHICAGO FIN BASIS - ICE OTC",
+          "symbol": "CFB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2012-10-09",
+          "has_price_data": false
+        },
+        {
+          "market_key": "aeco-fin-basis-ice-otc",
+          "market_name": "AECO FIN BASIS - ICE OTC",
+          "symbol": "AFB",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2012-10-09",
+          "has_price_data": false
+        },
+        {
+          "market_key": "panhandle-basis-swap-new-york-mercantile-exchange",
+          "market_name": "PANHANDLE BASIS SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "PBS",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2012-09-25",
+          "has_price_data": false
+        },
+        {
+          "market_key": "tco-basis-swap-new-york-mercantile-exchange",
+          "market_name": "TCO BASIS SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "TBS",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2011-09-27",
+          "has_price_data": false
+        },
+        {
+          "market_key": "henry-hub-basis-swap-new-york-mercantile-exchange",
+          "market_name": "HENRY HUB BASIS SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "HHBS",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2011-01-25",
+          "has_price_data": false
+        },
+        {
+          "market_key": "michcon-basis-swap-new-york-mercantile-exchange",
+          "market_name": "MICHCON BASIS SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "MBS",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2010-11-30",
+          "has_price_data": false
+        },
+        {
+          "market_key": "tetco-m-3-index-swap-new-york-mercantile-exchange",
+          "market_name": "TETCO M-3 INDEX SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "TM3I",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2009-09-29",
+          "has_price_data": false
+        },
+        {
+          "market_key": "henry-hub-index-swap-new-york-mercantile-exchange",
+          "market_name": "HENRY HUB INDEX SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "HHIS",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2009-09-29",
+          "has_price_data": false
+        },
+        {
+          "market_key": "waha-index-swap-new-york-mercantile-exchange",
+          "market_name": "WAHA INDEX SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "WIS",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2009-07-28",
+          "has_price_data": false
+        },
+        {
+          "market_key": "transco-zone-6-basis-swap-new-york-mercantile-exchange",
+          "market_name": "TRANSCO ZONE 6 BASIS SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "TZ6B",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2009-07-28",
+          "has_price_data": false
+        },
+        {
+          "market_key": "henry-hub-gas-swap-new-york-mercantile-exchange",
+          "market_name": "HENRY HUB GAS SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "HHGS",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2009-06-30",
+          "has_price_data": false
+        },
+        {
+          "market_key": "otc-henry-hub-gas-swap-new-york-mercantile-exchange",
+          "market_name": "OTC HENRY HUB GAS SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "OHHG",
+          "category": "Natural Gas and Products",
+          "price_ticker": null,
+          "latest_report_date": "2002-11-26",
+          "has_price_data": false
+        }
+      ]
+    },
+    {
+      "name": "Petroleum and Products",
+      "markets": [
+        {
+          "market_key": "wti-midland-argus-vs-wti-trade-new-york-mercantile-exchange",
+          "market_name": "WTI MIDLAND ARGUS VS WTI TRADE - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "WMAV",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "wti-houston-argus-wti-tr-mo-new-york-mercantile-exchange",
+          "market_name": "WTI  HOUSTON ARGUS/WTI TR MO - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "WHAW",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "usgc-hsfo-platts-brent-1st-ln-ice-futures-energy-div",
+          "market_name": "USGC HSFO-PLATTS/BRENT 1ST LN - ICE FUTURES ENERGY DIV",
+          "symbol": "UHPB",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "usgc-hsfo-platts-ice-futures-energy-div",
+          "market_name": "USGC HSFO (PLATTS) - ICE FUTURES ENERGY DIV",
+          "symbol": "UHP",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "up-down-gc-ulsd-vs-ho-spr-new-york-mercantile-exchange",
+          "market_name": "UP DOWN GC ULSD VS HO SPR - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "UDGU",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "gasoline-rbob-new-york-mercantile-exchange",
+          "market_name": "GASOLINE RBOB - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "RB",
+          "category": "Petroleum and Products",
+          "price_ticker": "RB=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ny-harbor-ulsd-new-york-mercantile-exchange",
+          "market_name": "NY HARBOR ULSD - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "NHU",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "marine-5-fob-usgc-brent-1st-ice-futures-energy-div",
+          "market_name": "MARINE .5% FOB USGC/BRENT 1st - ICE FUTURES ENERGY DIV",
+          "symbol": "M5FU",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "gulf-jet-ny-heat-oil-spr-new-york-mercantile-exchange",
+          "market_name": "GULF JET NY HEAT OIL SPR - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "GJNH",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "gulf-coast-cbob-gas-a2-pl-rbob-new-york-mercantile-exchange",
+          "market_name": "GULF COAST CBOB GAS A2 PL RBOB - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "GCCG",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "gulf-6-fuel-oil-crack-new-york-mercantile-exchange",
+          "market_name": "GULF # 6 FUEL OIL CRACK - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "G6FO",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "fuel-oil-3-usgc-3-5-fob-rdam-ice-futures-energy-div",
+          "market_name": "FUEL OIL-3% USGC/3.5% FOB RDAM - ICE FUTURES ENERGY DIV",
+          "symbol": "FO3U",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ethanol-new-york-mercantile-exchange",
+          "market_name": "ETHANOL - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "EH",
+          "category": "Petroleum and Products",
+          "price_ticker": "EH=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ethanol-t2-fob-incl-duty-new-york-mercantile-exchange",
+          "market_name": "ETHANOL T2 FOB INCL DUTY - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "EH",
+          "category": "Petroleum and Products",
+          "price_ticker": "EH=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "wti-financial-crude-oil-new-york-mercantile-exchange",
+          "market_name": "WTI FINANCIAL CRUDE OIL - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "CL",
+          "category": "Petroleum and Products",
+          "price_ticker": "CL=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "wti-physical-new-york-mercantile-exchange",
+          "market_name": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "CL",
+          "category": "Petroleum and Products",
+          "price_ticker": "CL=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "crude-oil-light-sweet-wti-ice-futures-europe",
+          "market_name": "CRUDE OIL, LIGHT SWEET-WTI - ICE FUTURES EUROPE",
+          "symbol": "CL",
+          "category": "Petroleum and Products",
+          "price_ticker": "CL=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "crude-diff-wcs-houston-wti-1st-ice-futures-energy-div",
+          "market_name": "CRUDE DIFF-WCS HOUSTON/WTI 1ST - ICE FUTURES ENERGY DIV",
+          "symbol": "CDWH",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "crude-diff-tmx-wcs-1a-index-ice-futures-energy-div",
+          "market_name": "CRUDE DIFF-TMX WCS 1A INDEX - ICE FUTURES ENERGY DIV",
+          "symbol": "CDTW",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "crude-diff-tmx-sw-1a-index-ice-futures-energy-div",
+          "market_name": "CRUDE DIFF-TMX SW 1A INDEX - ICE FUTURES ENERGY DIV",
+          "symbol": "CDTS",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "condensate-dif-tmx-c5-1a-index-ice-futures-energy-div",
+          "market_name": "CONDENSATE DIF-TMX C5 1A INDEX - ICE FUTURES ENERGY DIV",
+          "symbol": "CDTC",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "brent-last-day-new-york-mercantile-exchange",
+          "market_name": "BRENT LAST DAY - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "BLD",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "fuel-oil-usgc-hsfo-platts-balm-ice-futures-energy-div",
+          "market_name": "FUEL OIL USGC HSFO PLATTS BALM - ICE FUTURES ENERGY DIV",
+          "symbol": "FOUH",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2025-04-29",
+          "has_price_data": false
+        },
+        {
+          "market_key": "usgc-hsfo-platts-vs-wti-1st-ice-futures-energy-div",
+          "market_name": "USGC HSFO PLATTS vs WTI 1st - ICE FUTURES ENERGY DIV",
+          "symbol": "UHPV",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2024-03-26",
+          "has_price_data": false
+        },
+        {
+          "market_key": "crude-oil-light-sweet-new-york-mercantile-exchange",
+          "market_name": "CRUDE OIL, LIGHT SWEET - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "CL",
+          "category": "Petroleum and Products",
+          "price_ticker": "CL=F",
+          "latest_report_date": "2022-02-01",
+          "has_price_data": false
+        },
+        {
+          "market_key": "2-heating-oil-ny-harbor-ulsd-new-york-mercantile-exchange",
+          "market_name": "#2 HEATING OIL- NY HARBOR-ULSD - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "2HON",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2022-02-01",
+          "has_price_data": false
+        },
+        {
+          "market_key": "fuel-oil-3-usgc-3-5-fob-rdam-barges-ice-futures-energy-div",
+          "market_name": "FUEL OIL-3% USGC/3.5% FOB RDAM BARGES - ICE FUTURES ENERGY DIV",
+          "symbol": "FO3U",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2022-01-18",
+          "has_price_data": false
+        },
+        {
+          "market_key": "gulf-jet-ny-heat-oil-spr-swap-new-york-mercantile-exchange",
+          "market_name": "GULF JET NY HEAT OIL SPR SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "GJNH",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2018-12-18",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ethanol-t2-fob-incl-duty-swap-new-york-mercantile-exchange",
+          "market_name": "ETHANOL T2 FOB INCL DUTY SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "EH",
+          "category": "Petroleum and Products",
+          "price_ticker": "EH=F",
+          "latest_report_date": "2018-12-04",
+          "has_price_data": false
+        },
+        {
+          "market_key": "gulf-6-fuel-oil-crack-swap-new-york-mercantile-exchange",
+          "market_name": "GULF # 6 FUEL OIL CRACK SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "G6FO",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2018-05-29",
+          "has_price_data": false
+        },
+        {
+          "market_key": "up-down-gc-ulsd-vs-ho-spr-swap-new-york-mercantile-exchange",
+          "market_name": "UP DOWN GC ULSD VS HO SPR SWAP - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "UDGU",
+          "category": "Petroleum and Products",
+          "price_ticker": null,
+          "latest_report_date": "2016-01-05",
+          "has_price_data": false
+        },
+        {
+          "market_key": "crude-oil-light-sweet-ice-futures-europe",
+          "market_name": "CRUDE OIL, LIGHT SWEET - ICE FUTURES EUROPE",
+          "symbol": "CL",
+          "category": "Petroleum and Products",
+          "price_ticker": "CL=F",
+          "latest_report_date": "2014-03-25",
+          "has_price_data": false
+        },
+        {
+          "market_key": "crude-oil-light-sweet-ice-europe",
+          "market_name": "CRUDE OIL, LIGHT SWEET - ICE EUROPE",
+          "symbol": "CL",
+          "category": "Petroleum and Products",
+          "price_ticker": "CL=F",
+          "latest_report_date": "2009-09-22",
+          "has_price_data": false
+        },
+        {
+          "market_key": "e-miny-crude-oil-light-sweet-new-york-mercantile-exchange",
+          "market_name": "E-MINY CRUDE OIL, LIGHT SWEET - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "CL",
+          "category": "Petroleum and Products",
+          "price_ticker": "CL=F",
+          "latest_report_date": "2007-01-16",
+          "has_price_data": false
+        }
+      ]
+    },
+    {
+      "name": "Agriculture",
+      "markets": [
+        {
+          "market_key": "wheat-srw-chicago-board-of-trade",
+          "market_name": "WHEAT-SRW - CHICAGO BOARD OF TRADE",
+          "symbol": "ZW",
+          "category": "Agriculture",
+          "price_ticker": "ZW=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "soybeans-chicago-board-of-trade",
+          "market_name": "SOYBEANS - CHICAGO BOARD OF TRADE",
+          "symbol": "ZS",
+          "category": "Agriculture",
+          "price_ticker": "ZS=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "rough-rice-chicago-board-of-trade",
+          "market_name": "ROUGH RICE - CHICAGO BOARD OF TRADE",
+          "symbol": "ZR",
+          "category": "Agriculture",
+          "price_ticker": "ZR=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "corn-chicago-board-of-trade",
+          "market_name": "CORN - CHICAGO BOARD OF TRADE",
+          "symbol": "ZC",
+          "category": "Agriculture",
+          "price_ticker": "ZC=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "wheat-hrspring-miax-futures-exchange",
+          "market_name": "WHEAT-HRSpring - MIAX FUTURES EXCHANGE",
+          "symbol": "WH",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "usd-malaysian-crude-palm-oil-c-chicago-mercantile-exchange",
+          "market_name": "USD Malaysian Crude Palm Oil C - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "UMCP",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "soybean-oil-chicago-board-of-trade",
+          "market_name": "SOYBEAN OIL - CHICAGO BOARD OF TRADE",
+          "symbol": "SO",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "soybean-meal-chicago-board-of-trade",
+          "market_name": "SOYBEAN MEAL - CHICAGO BOARD OF TRADE",
+          "symbol": "SM",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "sugar-no-11-ice-futures-u-s",
+          "market_name": "SUGAR NO. 11 - ICE FUTURES U.S.",
+          "symbol": "SB",
+          "category": "Agriculture",
+          "price_ticker": "SB=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "non-fat-dry-milk-chicago-mercantile-exchange",
+          "market_name": "NON FAT DRY MILK - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "NFDM",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "milk-class-iii-chicago-mercantile-exchange",
+          "market_name": "MILK, Class III - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "MCI",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "lean-hogs-chicago-mercantile-exchange",
+          "market_name": "LEAN HOGS - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "LH",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "live-cattle-chicago-mercantile-exchange",
+          "market_name": "LIVE CATTLE - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "LC",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "wheat-hrw-chicago-board-of-trade",
+          "market_name": "WHEAT-HRW - CHICAGO BOARD OF TRADE",
+          "symbol": "KE",
+          "category": "Agriculture",
+          "price_ticker": "KE=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "coffee-c-ice-futures-u-s",
+          "market_name": "COFFEE C - ICE FUTURES U.S.",
+          "symbol": "KC",
+          "category": "Agriculture",
+          "price_ticker": "KC=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "frzn-concentrated-orange-juice-ice-futures-u-s",
+          "market_name": "FRZN CONCENTRATED ORANGE JUICE - ICE FUTURES U.S.",
+          "symbol": "FCOJ",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "feeder-cattle-chicago-mercantile-exchange",
+          "market_name": "FEEDER CATTLE - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "FC",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "cme-milk-iv-chicago-mercantile-exchange",
+          "market_name": "CME MILK IV - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "CMI",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "cocoa-ice-futures-u-s",
+          "market_name": "COCOA - ICE FUTURES U.S.",
+          "symbol": "CC",
+          "category": "Agriculture",
+          "price_ticker": "CC=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "canola-ice-futures-u-s",
+          "market_name": "CANOLA - ICE FUTURES U.S.",
+          "symbol": "CANOLA",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "cotton-no-2-ice-futures-u-s",
+          "market_name": "COTTON NO. 2 - ICE FUTURES U.S.",
+          "symbol": "C2",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "wheat-hrspring-minneapolis-grain-exchange",
+          "market_name": "WHEAT-HRSpring - MINNEAPOLIS GRAIN EXCHANGE",
+          "symbol": "WH",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2024-11-19",
+          "has_price_data": false
+        },
+        {
+          "market_key": "mini-soybeans-chicago-board-of-trade",
+          "market_name": "MINI SOYBEANS - CHICAGO BOARD OF TRADE",
+          "symbol": "ZS",
+          "category": "Agriculture",
+          "price_ticker": "ZS=F",
+          "latest_report_date": "2024-10-15",
+          "has_price_data": false
+        },
+        {
+          "market_key": "usd-malaysian-crude-palm-oil-chicago-mercantile-exchange",
+          "market_name": "USD MALAYSIAN CRUDE PALM OIL - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "UMCP",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2022-03-15",
+          "has_price_data": false
+        },
+        {
+          "market_key": "sugar-no-11-new-york-board-of-trade",
+          "market_name": "SUGAR NO. 11 - NEW YORK BOARD OF TRADE",
+          "symbol": "SB",
+          "category": "Agriculture",
+          "price_ticker": "SB=F",
+          "latest_report_date": "2007-08-28",
+          "has_price_data": false
+        },
+        {
+          "market_key": "coffee-c-new-york-board-of-trade",
+          "market_name": "COFFEE C - NEW YORK BOARD OF TRADE",
+          "symbol": "KC",
+          "category": "Agriculture",
+          "price_ticker": "KC=F",
+          "latest_report_date": "2007-08-28",
+          "has_price_data": false
+        },
+        {
+          "market_key": "frzn-concentrated-orange-juice-new-york-board-of-trade",
+          "market_name": "FRZN CONCENTRATED ORANGE JUICE - NEW YORK BOARD OF TRADE",
+          "symbol": "FCOJ",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2007-08-28",
+          "has_price_data": false
+        },
+        {
+          "market_key": "cocoa-new-york-board-of-trade",
+          "market_name": "COCOA - NEW YORK BOARD OF TRADE",
+          "symbol": "CC",
+          "category": "Agriculture",
+          "price_ticker": "CC=F",
+          "latest_report_date": "2007-08-28",
+          "has_price_data": false
+        },
+        {
+          "market_key": "cotton-no-2-new-york-board-of-trade",
+          "market_name": "COTTON NO. 2 - NEW YORK BOARD OF TRADE",
+          "symbol": "C2",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2007-08-28",
+          "has_price_data": false
+        },
+        {
+          "market_key": "sugar-no-11-coffee-sugar-and-cocoa-exchange",
+          "market_name": "SUGAR NO. 11 - COFFEE, SUGAR AND COCOA EXCHANGE",
+          "symbol": "SB",
+          "category": "Agriculture",
+          "price_ticker": "SB=F",
+          "latest_report_date": "2004-12-28",
+          "has_price_data": false
+        },
+        {
+          "market_key": "coffee-c-coffee-sugar-and-cocoa-exchange",
+          "market_name": "COFFEE C - COFFEE, SUGAR AND COCOA EXCHANGE",
+          "symbol": "KC",
+          "category": "Agriculture",
+          "price_ticker": "KC=F",
+          "latest_report_date": "2004-12-28",
+          "has_price_data": false
+        },
+        {
+          "market_key": "frzn-concentrated-orange-juice-new-york-cotton-exchange",
+          "market_name": "FRZN CONCENTRATED ORANGE JUICE - NEW YORK COTTON EXCHANGE",
+          "symbol": "FCOJ",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2004-12-28",
+          "has_price_data": false
+        },
+        {
+          "market_key": "cocoa-coffee-sugar-and-cocoa-exchange",
+          "market_name": "COCOA - COFFEE, SUGAR AND COCOA EXCHANGE",
+          "symbol": "CC",
+          "category": "Agriculture",
+          "price_ticker": "CC=F",
+          "latest_report_date": "2004-12-28",
+          "has_price_data": false
+        },
+        {
+          "market_key": "cotton-no-2-new-york-cotton-exchange",
+          "market_name": "COTTON NO. 2 - NEW YORK COTTON EXCHANGE",
+          "symbol": "C2",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2004-12-28",
+          "has_price_data": false
+        },
+        {
+          "market_key": "frzn-concentrated-orange-juice-citrus-assoc-of-ny-cotton-exch",
+          "market_name": "FRZN CONCENTRATED ORANGE JUICE - CITRUS ASSOC. OF NY COTTON EXCH",
+          "symbol": "FCOJ",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2004-03-09",
+          "has_price_data": false
+        },
+        {
+          "market_key": "sugar-no-11-coffee-sugar-and-cocoa-exchang",
+          "market_name": "SUGAR NO. 11 - COFFEE,SUGAR AND COCOA EXCHANG",
+          "symbol": "SB",
+          "category": "Agriculture",
+          "price_ticker": "SB=F",
+          "latest_report_date": "2002-04-23",
+          "has_price_data": false
+        },
+        {
+          "market_key": "coffee-c-coffee-sugar-and-cocoa-exchang",
+          "market_name": "COFFEE C - COFFEE,SUGAR AND COCOA EXCHANG",
+          "symbol": "KC",
+          "category": "Agriculture",
+          "price_ticker": "KC=F",
+          "latest_report_date": "2002-04-23",
+          "has_price_data": false
+        },
+        {
+          "market_key": "frzn-concentrated-orange-juice-citrus-assoc-of-ny-cotton-exc",
+          "market_name": "FRZN CONCENTRATED ORANGE JUICE - CITRUS ASSOC. OF NY COTTON EXC",
+          "symbol": "FCOJ",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2002-04-23",
+          "has_price_data": false
+        },
+        {
+          "market_key": "cocoa-coffee-sugar-and-cocoa-exchang",
+          "market_name": "COCOA - COFFEE,SUGAR AND COCOA EXCHANG",
+          "symbol": "CC",
+          "category": "Agriculture",
+          "price_ticker": "CC=F",
+          "latest_report_date": "2002-04-23",
+          "has_price_data": false
+        },
+        {
+          "market_key": "butter-chicago-mercantile-exchange",
+          "market_name": "BUTTER - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "BUTTER",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2000-05-02",
+          "has_price_data": false
+        },
+        {
+          "market_key": "soybeans-midamerica-commodity-exchange",
+          "market_name": "SOYBEANS - MIDAMERICA COMMODITY EXCHANGE",
+          "symbol": "SOYBEA",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2000-04-18",
+          "has_price_data": false
+        },
+        {
+          "market_key": "corn-midamerica-commodity-exchange",
+          "market_name": "CORN - MIDAMERICA COMMODITY EXCHANGE",
+          "symbol": "CORN",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "2000-02-22",
+          "has_price_data": false
+        },
+        {
+          "market_key": "sugar-no-11-coffee-cocoa-and-sugar-exchang",
+          "market_name": "SUGAR NO. 11 - COFFEE,COCOA AND SUGAR EXCHANG",
+          "symbol": "SB",
+          "category": "Agriculture",
+          "price_ticker": "SB=F",
+          "latest_report_date": "2000-01-04",
+          "has_price_data": false
+        },
+        {
+          "market_key": "coffee-c-coffee-cocoa-and-sugar-exchang",
+          "market_name": "COFFEE C - COFFEE,COCOA AND SUGAR EXCHANG",
+          "symbol": "KC",
+          "category": "Agriculture",
+          "price_ticker": "KC=F",
+          "latest_report_date": "2000-01-04",
+          "has_price_data": false
+        },
+        {
+          "market_key": "cocoa-coffee-cocoa-and-sugar-exchang",
+          "market_name": "COCOA - COFFEE,COCOA AND SUGAR EXCHANG",
+          "symbol": "CC",
+          "category": "Agriculture",
+          "price_ticker": "CC=F",
+          "latest_report_date": "2000-01-04",
+          "has_price_data": false
+        },
+        {
+          "market_key": "sugar-no-11-coffee-sugar-cocoa-exchange",
+          "market_name": "SUGAR NO. 11 - COFFEE, SUGAR & COCOA EXCHANGE",
+          "symbol": "SB",
+          "category": "Agriculture",
+          "price_ticker": "SB=F",
+          "latest_report_date": "1999-12-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "coffee-c-coffee-sugar-cocoa-exchange",
+          "market_name": "COFFEE C - COFFEE, SUGAR & COCOA EXCHANGE",
+          "symbol": "KC",
+          "category": "Agriculture",
+          "price_ticker": "KC=F",
+          "latest_report_date": "1999-12-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "frzn-concentrated-orange-juice-citrus-assoc-of-n-y-cotton-exch-inc",
+          "market_name": "FRZN CONCENTRATED ORANGE JUICE - CITRUS ASSOC. OF N Y COTTON EXCH INC",
+          "symbol": "FCOJ",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "1999-12-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "cocoa-coffee-sugar-cocoa-exchange",
+          "market_name": "COCOA - COFFEE, SUGAR & COCOA EXCHANGE",
+          "symbol": "CC",
+          "category": "Agriculture",
+          "price_ticker": "CC=F",
+          "latest_report_date": "1999-12-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "soybean-oil-midamerica-commodity-exchange",
+          "market_name": "SOYBEAN OIL - MIDAMERICA COMMODITY EXCHANGE",
+          "symbol": "SO",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "1998-05-26",
+          "has_price_data": false
+        },
+        {
+          "market_key": "non-fat-dry-milk-coffee-sugar-cocoa-exchange",
+          "market_name": "NON FAT DRY MILK - COFFEE, SUGAR & COCOA EXCHANGE",
+          "symbol": "CC",
+          "category": "Agriculture",
+          "price_ticker": "CC=F",
+          "latest_report_date": "1994-11-01",
+          "has_price_data": false
+        },
+        {
+          "market_key": "rough-rice-midamerica-commodity-exchange",
+          "market_name": "ROUGH RICE - MIDAMERICA COMMODITY EXCHANGE",
+          "symbol": "RR",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "1994-09-27",
+          "has_price_data": false
+        },
+        {
+          "market_key": "rough-rice-mid-america-commodity-exchange",
+          "market_name": "ROUGH RICE - MID AMERICA COMMODITY EXCHANGE",
+          "symbol": "RR",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "1991-11-29",
+          "has_price_data": false
+        },
+        {
+          "market_key": "rough-rice-chicago-rice-and-cotton-exchange",
+          "market_name": "ROUGH RICE - CHICAGO RICE AND COTTON EXCHANGE",
+          "symbol": "RR",
+          "category": "Agriculture",
+          "price_ticker": null,
+          "latest_report_date": "1991-11-15",
+          "has_price_data": false
+        }
+      ]
+    },
+    {
+      "name": "Financial",
+      "markets": [
+        {
+          "market_key": "ust-2y-note-chicago-board-of-trade",
+          "market_name": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+          "symbol": "ZT",
+          "category": "Financial",
+          "price_ticker": "ZT=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "fed-funds-chicago-board-of-trade",
+          "market_name": "FED FUNDS - CHICAGO BOARD OF TRADE",
+          "symbol": "ZQ",
+          "category": "Financial",
+          "price_ticker": "ZQ=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "ust-10y-note-chicago-board-of-trade",
+          "market_name": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+          "symbol": "ZN",
+          "category": "Financial",
+          "price_ticker": "ZN=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "10-year-eris-sofr-swap-chicago-board-of-trade",
+          "market_name": "10 YEAR ERIS SOFR SWAP - CHICAGO BOARD OF TRADE",
+          "symbol": "ZN",
+          "category": "Financial",
+          "price_ticker": "ZN=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ust-5y-note-chicago-board-of-trade",
+          "market_name": "UST 5Y NOTE - CHICAGO BOARD OF TRADE",
+          "symbol": "ZF",
+          "category": "Financial",
+          "price_ticker": "ZF=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ust-bond-chicago-board-of-trade",
+          "market_name": "UST BOND - CHICAGO BOARD OF TRADE",
+          "symbol": "ZB",
+          "category": "Financial",
+          "price_ticker": "ZB=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ultra-ust-bond-chicago-board-of-trade",
+          "market_name": "ULTRA UST BOND - CHICAGO BOARD OF TRADE",
+          "symbol": "ZB",
+          "category": "Financial",
+          "price_ticker": "ZB=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "micro-e-mini-djia-x-0-5-chicago-board-of-trade",
+          "market_name": "MICRO E-MINI DJIA (x$0.5) - CHICAGO BOARD OF TRADE",
+          "symbol": "YM",
+          "category": "Financial",
+          "price_ticker": "YM=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "djia-consolidated-chicago-board-of-trade",
+          "market_name": "DJIA Consolidated - CHICAGO BOARD OF TRADE",
+          "symbol": "YM",
+          "category": "Financial",
+          "price_ticker": "YM=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "djia-x-5-chicago-board-of-trade",
+          "market_name": "DJIA x $5 - CHICAGO BOARD OF TRADE",
+          "symbol": "YM",
+          "category": "Financial",
+          "price_ticker": "YM=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "dow-jones-u-s-real-estate-idx-chicago-board-of-trade",
+          "market_name": "DOW JONES U.S. REAL ESTATE IDX - CHICAGO BOARD OF TRADE",
+          "symbol": "YM",
+          "category": "Financial",
+          "price_ticker": "YM=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "vix-futures-cboe-futures-exchange",
+          "market_name": "VIX FUTURES - CBOE FUTURES EXCHANGE",
+          "symbol": "VF",
+          "category": "Financial",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ultra-ust-10y-chicago-board-of-trade",
+          "market_name": "ULTRA UST 10Y - CHICAGO BOARD OF TRADE",
+          "symbol": "TN",
+          "category": "Financial",
+          "price_ticker": "TN=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "5-year-eris-sofr-swap-chicago-board-of-trade",
+          "market_name": "5 YEAR ERIS SOFR SWAP - CHICAGO BOARD OF TRADE",
+          "symbol": "SR3",
+          "category": "Financial",
+          "price_ticker": "SR3=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "2-year-eris-sofr-swap-chicago-board-of-trade",
+          "market_name": "2 YEAR ERIS SOFR SWAP - CHICAGO BOARD OF TRADE",
+          "symbol": "SR3",
+          "category": "Financial",
+          "price_ticker": "SR3=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "sofr-3m-chicago-mercantile-exchange",
+          "market_name": "SOFR-3M - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "SR3",
+          "category": "Financial",
+          "price_ticker": "SR3=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "sofr-1m-chicago-mercantile-exchange",
+          "market_name": "SOFR-1M - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "SR1",
+          "category": "Financial",
+          "price_ticker": "SR1=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "so-african-rand-chicago-mercantile-exchange",
+          "market_name": "SO AFRICAN RAND - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "SAR",
+          "category": "Financial",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "russell-e-mini-chicago-mercantile-exchange",
+          "market_name": "RUSSELL E-MINI - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "RTY",
+          "category": "Financial",
+          "price_ticker": "RTY=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "nasdaq-100-consolidated-chicago-mercantile-exchange",
+          "market_name": "NASDAQ-100 Consolidated - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "NQ",
+          "category": "Financial",
+          "price_ticker": "NQ=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "nasdaq-mini-chicago-mercantile-exchange",
+          "market_name": "NASDAQ MINI - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "NQ",
+          "category": "Financial",
+          "price_ticker": "NQ=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nikkei-stock-average-yen-denom-chicago-mercantile-exchange",
+          "market_name": "NIKKEI STOCK AVERAGE YEN DENOM - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "NKD",
+          "category": "Financial",
+          "price_ticker": "NKD=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "micro-e-mini-nasdaq-100-index-chicago-mercantile-exchange",
+          "market_name": "MICRO E-MINI NASDAQ-100 INDEX - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "MNQ",
+          "category": "Financial",
+          "price_ticker": "MNQ=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "micro-e-mini-s-p-500-index-chicago-mercantile-exchange",
+          "market_name": "MICRO E-MINI S&P 500 INDEX - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "MES",
+          "category": "Financial",
+          "price_ticker": "MES=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "micro-e-mini-russell-2000-indx-chicago-mercantile-exchange",
+          "market_name": "MICRO E-MINI RUSSELL 2000 INDX - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "M2K",
+          "category": "Financial",
+          "price_ticker": "M2K=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "micro-ether-chicago-mercantile-exchange",
+          "market_name": "MICRO ETHER - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "ETH",
+          "category": "Financial",
+          "price_ticker": "ETH-USD",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ether-cash-settled-chicago-mercantile-exchange",
+          "market_name": "ETHER CASH SETTLED - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "ETH",
+          "category": "Financial",
+          "price_ticker": "ETH-USD",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "nano-ether-perp-style-coinbase-derivatives-llc",
+          "market_name": "NANO ETHER PERP STYLE - COINBASE DERIVATIVES, LLC",
+          "symbol": "ETH",
+          "category": "Financial",
+          "price_ticker": "ETH-USD",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nano-ether-coinbase-derivatives-llc",
+          "market_name": "NANO ETHER - COINBASE DERIVATIVES, LLC",
+          "symbol": "ETH",
+          "category": "Financial",
+          "price_ticker": "ETH-USD",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "euro-short-term-rate-chicago-mercantile-exchange",
+          "market_name": "EURO SHORT TERM RATE - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "ESTR",
+          "category": "Financial",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "s-p-500-annual-dividend-index-chicago-mercantile-exchange",
+          "market_name": "S&P 500 ANNUAL DIVIDEND INDEX - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "ES",
+          "category": "Financial",
+          "price_ticker": "ES=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "e-mini-s-p-consu-staples-index-chicago-mercantile-exchange",
+          "market_name": "E-MINI S&P CONSU STAPLES INDEX - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "ES",
+          "category": "Financial",
+          "price_ticker": "ES=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "e-mini-s-p-energy-index-chicago-mercantile-exchange",
+          "market_name": "E-MINI S&P ENERGY INDEX - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "ES",
+          "category": "Financial",
+          "price_ticker": "ES=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "e-mini-s-p-financial-index-chicago-mercantile-exchange",
+          "market_name": "E-MINI S&P FINANCIAL INDEX - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "ES",
+          "category": "Financial",
+          "price_ticker": "ES=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "e-mini-s-p-health-care-index-chicago-mercantile-exchange",
+          "market_name": "E-MINI S&P HEALTH CARE INDEX - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "ES",
+          "category": "Financial",
+          "price_ticker": "ES=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "e-mini-s-p-technology-index-chicago-mercantile-exchange",
+          "market_name": "E-MINI S&P TECHNOLOGY INDEX - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "ES",
+          "category": "Financial",
+          "price_ticker": "ES=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "e-mini-s-p-utilities-index-chicago-mercantile-exchange",
+          "market_name": "E-MINI S&P UTILITIES INDEX - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "ES",
+          "category": "Financial",
+          "price_ticker": "ES=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "s-p-500-consolidated-chicago-mercantile-exchange",
+          "market_name": "S&P 500 Consolidated - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "ES",
+          "category": "Financial",
+          "price_ticker": "ES=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "s-p-500-quarterly-dividend-ind-chicago-mercantile-exchange",
+          "market_name": "S&P 500 QUARTERLY DIVIDEND IND - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "ES",
+          "category": "Financial",
+          "price_ticker": "ES=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "e-mini-s-p-500-chicago-mercantile-exchange",
+          "market_name": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "ES",
+          "category": "Financial",
+          "price_ticker": "ES=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "e-mini-s-p-400-stock-index-chicago-mercantile-exchange",
+          "market_name": "E-MINI S&P 400 STOCK INDEX - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "ES",
+          "category": "Financial",
+          "price_ticker": "ES=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "adjusted-int-rate-s-p-500-totl-chicago-mercantile-exchange",
+          "market_name": "ADJUSTED INT RATE S&P 500 TOTL - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "ES",
+          "category": "Financial",
+          "price_ticker": "ES=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "msci-eafe-ice-futures-u-s",
+          "market_name": "MSCI EAFE - ICE FUTURES U.S.",
+          "symbol": "EFA",
+          "category": "Financial",
+          "price_ticker": "EFA",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "msci-em-index-ice-futures-u-s",
+          "market_name": "MSCI EM INDEX - ICE FUTURES U.S.",
+          "symbol": "EFA",
+          "category": "Financial",
+          "price_ticker": "EFA",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "usd-index-ice-futures-u-s",
+          "market_name": "USD INDEX - ICE FUTURES U.S.",
+          "symbol": "DXY",
+          "category": "Financial",
+          "price_ticker": "DXY=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "dogecoin-perp-style-coinbase-derivatives-llc",
+          "market_name": "DOGECOIN PERP STYLE - COINBASE DERIVATIVES, LLC",
+          "symbol": "DPS",
+          "category": "Financial",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "dogecoin-coinbase-derivatives-llc",
+          "market_name": "DOGECOIN - COINBASE DERIVATIVES, LLC",
+          "symbol": "DOGECO",
+          "category": "Financial",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "bitcoin-chicago-mercantile-exchange",
+          "market_name": "BITCOIN - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "BTC",
+          "category": "Financial",
+          "price_ticker": "BTC-USD",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "micro-bitcoin-chicago-mercantile-exchange",
+          "market_name": "MICRO BITCOIN - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "BTC",
+          "category": "Financial",
+          "price_ticker": "BTC-USD",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nano-bitcoin-coinbase-derivatives-llc",
+          "market_name": "Nano Bitcoin - COINBASE DERIVATIVES, LLC",
+          "symbol": "BTC",
+          "category": "Financial",
+          "price_ticker": "BTC-USD",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nano-bitcoin-perp-style-coinbase-derivatives-llc",
+          "market_name": "NANO BITCOIN PERP STYLE - COINBASE DERIVATIVES, LLC",
+          "symbol": "BTC",
+          "category": "Financial",
+          "price_ticker": "BTC-USD",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "brazilian-real-chicago-mercantile-exchange",
+          "market_name": "BRAZILIAN REAL - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "BR",
+          "category": "Financial",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "bbg-commodity-chicago-board-of-trade",
+          "market_name": "BBG COMMODITY - CHICAGO BOARD OF TRADE",
+          "symbol": "BC",
+          "category": "Financial",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "avalanche-coinbase-derivatives-llc",
+          "market_name": "AVALANCHE - COINBASE DERIVATIVES, LLC",
+          "symbol": "AVALAN",
+          "category": "Financial",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "avalanche-perp-style-coinbase-derivatives-llc",
+          "market_name": "AVALANCHE PERP STYLE - COINBASE DERIVATIVES, LLC",
+          "symbol": "APS",
+          "category": "Financial",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "swiss-franc-chicago-mercantile-exchange",
+          "market_name": "SWISS FRANC - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "6S",
+          "category": "Financial",
+          "price_ticker": "6S=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nz-dollar-chicago-mercantile-exchange",
+          "market_name": "NZ DOLLAR - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "6N",
+          "category": "Financial",
+          "price_ticker": "6N=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "mexican-peso-chicago-mercantile-exchange",
+          "market_name": "MEXICAN PESO - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "6M",
+          "category": "Financial",
+          "price_ticker": "6M=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "japanese-yen-chicago-mercantile-exchange",
+          "market_name": "JAPANESE YEN - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "6J",
+          "category": "Financial",
+          "price_ticker": "6J=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "euro-fx-japanese-yen-xrate-chicago-mercantile-exchange",
+          "market_name": "EURO FX/JAPANESE YEN XRATE - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "6J",
+          "category": "Financial",
+          "price_ticker": "6J=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "euro-fx-chicago-mercantile-exchange",
+          "market_name": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "6E",
+          "category": "Financial",
+          "price_ticker": "6E=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "canadian-dollar-chicago-mercantile-exchange",
+          "market_name": "CANADIAN DOLLAR - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "6C",
+          "category": "Financial",
+          "price_ticker": "6C=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "british-pound-chicago-mercantile-exchange",
+          "market_name": "BRITISH POUND - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "6B",
+          "category": "Financial",
+          "price_ticker": "6B=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "euro-fx-british-pound-xrate-chicago-mercantile-exchange",
+          "market_name": "EURO FX/BRITISH POUND XRATE - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "6B",
+          "category": "Financial",
+          "price_ticker": "6B=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "australian-dollar-chicago-mercantile-exchange",
+          "market_name": "AUSTRALIAN DOLLAR - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "6A",
+          "category": "Financial",
+          "price_ticker": "6A=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "emini-russell-1000-value-index-chicago-mercantile-exchange",
+          "market_name": "EMINI RUSSELL 1000 VALUE INDEX - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "EFA",
+          "category": "Financial",
+          "price_ticker": "EFA",
+          "latest_report_date": "2026-04-07",
+          "has_price_data": false
+        },
+        {
+          "market_key": "e-mini-s-p-materials-index-chicago-mercantile-exchange",
+          "market_name": "E-MINI S&P MATERIALS INDEX - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "ES",
+          "category": "Financial",
+          "price_ticker": "ES=F",
+          "latest_report_date": "2026-03-17",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nikkei-stock-average-chicago-mercantile-exchange",
+          "market_name": "NIKKEI STOCK AVERAGE - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "NKD",
+          "category": "Financial",
+          "price_ticker": "NKD=F",
+          "latest_report_date": "2026-03-03",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ultra-us-t-bond-chicago-board-of-trade",
+          "market_name": "ULTRA US T BOND - CHICAGO BOARD OF TRADE",
+          "symbol": "UUTB",
+          "category": "Financial",
+          "price_ticker": null,
+          "latest_report_date": "2025-09-16",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nano-ether-lmx-labs-llc",
+          "market_name": "NANO ETHER - LMX LABS LLC",
+          "symbol": "ETH",
+          "category": "Financial",
+          "price_ticker": "ETH-USD",
+          "latest_report_date": "2025-07-15",
+          "has_price_data": false
+        },
+        {
+          "market_key": "dogecoin-lmx-labs-llc",
+          "market_name": "DOGECOIN - LMX LABS LLC",
+          "symbol": "DOGECO",
+          "category": "Financial",
+          "price_ticker": null,
+          "latest_report_date": "2025-07-15",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nano-bitcoin-lmx-labs-llc",
+          "market_name": "Nano Bitcoin - LMX LABS LLC",
+          "symbol": "BTC",
+          "category": "Financial",
+          "price_ticker": "BTC-USD",
+          "latest_report_date": "2025-07-15",
+          "has_price_data": false
+        },
+        {
+          "market_key": "avalanche-lmx-labs-llc",
+          "market_name": "AVALANCHE - LMX LABS LLC",
+          "symbol": "AVALAN",
+          "category": "Financial",
+          "price_ticker": null,
+          "latest_report_date": "2025-07-15",
+          "has_price_data": false
+        },
+        {
+          "market_key": "e-mini-s-p-500-stock-index-chicago-mercantile-exchange",
+          "market_name": "E-MINI S&P 500 STOCK INDEX - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "ES",
+          "category": "Financial",
+          "price_ticker": "ES=F",
+          "latest_report_date": "2022-02-01",
+          "has_price_data": false
+        },
+        {
+          "market_key": "msci-eafe-mini-index-ice-futures-u-s",
+          "market_name": "MSCI EAFE MINI INDEX - ICE FUTURES U.S.",
+          "symbol": "EFA",
+          "category": "Financial",
+          "price_ticker": "EFA",
+          "latest_report_date": "2022-02-01",
+          "has_price_data": false
+        },
+        {
+          "market_key": "british-pound-sterling-chicago-mercantile-exchange",
+          "market_name": "BRITISH POUND STERLING - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "6B",
+          "category": "Financial",
+          "price_ticker": "6B=F",
+          "latest_report_date": "2022-02-01",
+          "has_price_data": false
+        },
+        {
+          "market_key": "msci-eafe-mini-index-nyse-liffe",
+          "market_name": "MSCI EAFE MINI INDEX - NYSE LIFFE",
+          "symbol": "EFA",
+          "category": "Financial",
+          "price_ticker": "EFA",
+          "latest_report_date": "2014-06-24",
+          "has_price_data": false
+        },
+        {
+          "market_key": "e-mini-msci-eafe-chicago-mercantile-exchange",
+          "market_name": "E-MINI MSCI EAFE - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "EFA",
+          "category": "Financial",
+          "price_ticker": "EFA",
+          "latest_report_date": "2011-06-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "euro-fx-japanese-yen-xrate-new-york-board-of-trade",
+          "market_name": "EURO FX/JAPANESE YEN XRATE - NEW YORK BOARD OF TRADE",
+          "symbol": "6J",
+          "category": "Financial",
+          "price_ticker": "6J=F",
+          "latest_report_date": "2007-07-24",
+          "has_price_data": false
+        },
+        {
+          "market_key": "euro-fx-british-pound-xrate-new-york-board-of-trade",
+          "market_name": "EURO FX/BRITISH POUND XRATE - NEW YORK BOARD OF TRADE",
+          "symbol": "6B",
+          "category": "Financial",
+          "price_ticker": "6B=F",
+          "latest_report_date": "2006-09-05",
+          "has_price_data": false
+        },
+        {
+          "market_key": "euro-fx-japanese-yen-xrate-new-york-cotton-exchange",
+          "market_name": "EURO FX/JAPANESE YEN XRATE - NEW YORK COTTON EXCHANGE",
+          "symbol": "6J",
+          "category": "Financial",
+          "price_ticker": "6J=F",
+          "latest_report_date": "2004-12-28",
+          "has_price_data": false
+        },
+        {
+          "market_key": "australian-dollars-chicago-mercantile-exchange",
+          "market_name": "AUSTRALIAN DOLLARS - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "6A",
+          "category": "Financial",
+          "price_ticker": "6A=F",
+          "latest_report_date": "2003-12-30",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nikkei-stock-average-international-monetary-market",
+          "market_name": "NIKKEI STOCK AVERAGE - INTERNATIONAL MONETARY MARKET",
+          "symbol": "NKD",
+          "category": "Financial",
+          "price_ticker": "NKD=F",
+          "latest_report_date": "2000-08-22",
+          "has_price_data": false
+        },
+        {
+          "market_key": "e-mini-s-p-500-stock-index-international-monetary-market",
+          "market_name": "E-MINI S&P 500 STOCK INDEX - INTERNATIONAL MONETARY MARKET",
+          "symbol": "ES",
+          "category": "Financial",
+          "price_ticker": "ES=F",
+          "latest_report_date": "2000-08-22",
+          "has_price_data": false
+        },
+        {
+          "market_key": "swiss-franc-international-monetary-market",
+          "market_name": "SWISS FRANC - INTERNATIONAL MONETARY MARKET",
+          "symbol": "6S",
+          "category": "Financial",
+          "price_ticker": "6S=F",
+          "latest_report_date": "2000-08-22",
+          "has_price_data": false
+        },
+        {
+          "market_key": "mexican-peso-international-monetary-market",
+          "market_name": "MEXICAN PESO - INTERNATIONAL MONETARY MARKET",
+          "symbol": "6M",
+          "category": "Financial",
+          "price_ticker": "6M=F",
+          "latest_report_date": "2000-08-22",
+          "has_price_data": false
+        },
+        {
+          "market_key": "japanese-yen-international-monetary-market",
+          "market_name": "JAPANESE YEN - INTERNATIONAL MONETARY MARKET",
+          "symbol": "6J",
+          "category": "Financial",
+          "price_ticker": "6J=F",
+          "latest_report_date": "2000-08-22",
+          "has_price_data": false
+        },
+        {
+          "market_key": "euro-fx-international-monetary-market",
+          "market_name": "EURO FX - INTERNATIONAL MONETARY MARKET",
+          "symbol": "6E",
+          "category": "Financial",
+          "price_ticker": "6E=F",
+          "latest_report_date": "2000-08-22",
+          "has_price_data": false
+        },
+        {
+          "market_key": "canadian-dollar-international-monetary-market",
+          "market_name": "CANADIAN DOLLAR - INTERNATIONAL MONETARY MARKET",
+          "symbol": "6C",
+          "category": "Financial",
+          "price_ticker": "6C=F",
+          "latest_report_date": "2000-08-22",
+          "has_price_data": false
+        },
+        {
+          "market_key": "australian-dollars-international-monetary-market",
+          "market_name": "AUSTRALIAN DOLLARS - INTERNATIONAL MONETARY MARKET",
+          "symbol": "6A",
+          "category": "Financial",
+          "price_ticker": "6A=F",
+          "latest_report_date": "2000-06-13",
+          "has_price_data": false
+        },
+        {
+          "market_key": "u-s-dollars-japanese-yen-new-york-futures-exchange",
+          "market_name": "U.S. DOLLARS-JAPANESE YEN - NEW YORK FUTURES EXCHANGE",
+          "symbol": "6J",
+          "category": "Financial",
+          "price_ticker": "6J=F",
+          "latest_report_date": "2000-04-18",
+          "has_price_data": false
+        },
+        {
+          "market_key": "australian-dollars-new-york-cotton-exchange",
+          "market_name": "AUSTRALIAN DOLLARS - NEW YORK COTTON EXCHANGE",
+          "symbol": "6A",
+          "category": "Financial",
+          "price_ticker": "6A=F",
+          "latest_report_date": "2000-03-07",
+          "has_price_data": false
+        },
+        {
+          "market_key": "u-s-dollar-swiss-franc-new-york-futures-exchange",
+          "market_name": "U.S. DOLLAR-SWISS FRANC - NEW YORK FUTURES EXCHANGE",
+          "symbol": "6S",
+          "category": "Financial",
+          "price_ticker": "6S=F",
+          "latest_report_date": "1999-11-16",
+          "has_price_data": false
+        },
+        {
+          "market_key": "brazilian-real-international-monetary-market",
+          "market_name": "BRAZILIAN REAL - INTERNATIONAL MONETARY MARKET",
+          "symbol": "BR",
+          "category": "Financial",
+          "price_ticker": null,
+          "latest_report_date": "1999-05-25",
+          "has_price_data": false
+        },
+        {
+          "market_key": "japanese-yen-philadelphia-board-of-trade",
+          "market_name": "JAPANESE YEN - PHILADELPHIA BOARD OF TRADE",
+          "symbol": "6J",
+          "category": "Financial",
+          "price_ticker": "6J=F",
+          "latest_report_date": "1995-09-12",
+          "has_price_data": false
+        },
+        {
+          "market_key": "british-pound-sterling-new-international-monetary-market",
+          "market_name": "BRITISH POUND STERLING- NEW - INTERNATIONAL MONETARY MARKET",
+          "symbol": "6B",
+          "category": "Financial",
+          "price_ticker": "6B=F",
+          "latest_report_date": "1993-01-19",
+          "has_price_data": false
+        },
+        {
+          "market_key": "british-pound-sterling-international-monetary-market",
+          "market_name": "BRITISH POUND STERLING - INTERNATIONAL MONETARY MARKET",
+          "symbol": "6B",
+          "category": "Financial",
+          "price_ticker": "6B=F",
+          "latest_report_date": "1988-05-31",
+          "has_price_data": false
+        },
+        {
+          "market_key": "swiss-franc-philadelphia-board-of-trade",
+          "market_name": "SWISS FRANC - PHILADELPHIA BOARD OF TRADE",
+          "symbol": "6S",
+          "category": "Financial",
+          "price_ticker": "6S=F",
+          "latest_report_date": "1987-05-29",
+          "has_price_data": false
+        }
+      ]
+    },
+    {
+      "name": "Electricity",
+      "markets": [
+        {
+          "market_key": "sp15-fin-da-peak-fixed-ice-futures-energy-div",
+          "market_name": "SP15 FIN DA PEAK FIXED - ICE FUTURES ENERGY DIV",
+          "symbol": "SFDP",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-western-hub-rt-off-ice-futures-energy-div",
+          "market_name": "PJM WESTERN HUB RT OFF - ICE FUTURES ENERGY DIV",
+          "symbol": "PWHR",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-western-hub-rt-peak-mini-ice-futures-energy-div",
+          "market_name": "PJM WESTERN HUB RT PEAK MINI - ICE FUTURES ENERGY DIV",
+          "symbol": "PWHR",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-western-hub-month-on-rtp-nodal-exchange",
+          "market_name": "PJM.WESTERN HUB_month_on_rtp - NODAL EXCHANGE",
+          "symbol": "PWHM",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-western-hub-month-off-rtp-nodal-exchange",
+          "market_name": "PJM.WESTERN HUB_month_off_rtp - NODAL EXCHANGE",
+          "symbol": "PWHM",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-western-hub-month-off-dap-nodal-exchange",
+          "market_name": "PJM.WESTERN HUB_month_off_dap - NODAL EXCHANGE",
+          "symbol": "PWHM",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-western-hub-da-off-pk-ice-futures-energy-div",
+          "market_name": "PJM WESTERN HUB DA OFF-PK - ICE FUTURES ENERGY DIV",
+          "symbol": "PWHD",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-western-hub-da-peak-ice-futures-energy-div",
+          "market_name": "PJM WESTERN HUB DA PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "PWHD",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-western-hub-dap-nodal-exchange",
+          "market_name": "PJM.WESTERN HUB DAP - NODAL EXCHANGE",
+          "symbol": "PWHD",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "palo-verde-da-peak-ice-futures-energy-div",
+          "market_name": "PALO VERDE DA PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "PVDP",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "palo-verde-da-off-pk-fixed-pr-ice-futures-energy-div",
+          "market_name": "PALO VERDE DA OFF-PK FiXED PR - ICE FUTURES ENERGY DIV",
+          "symbol": "PVDO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-ppl-zone-da-peak-ice-futures-energy-div",
+          "market_name": "PJM PPL ZONE DA PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "PPZD",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-ppl-zone-da-off-peak-fixed-ice-futures-energy-div",
+          "market_name": "PJM PPL ZONE DA OFF-PEAK FIXED - ICE FUTURES ENERGY DIV",
+          "symbol": "PPZD",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-pseg-month-off-dap-nodal-exchange",
+          "market_name": "PJM.PSEG_month_off_dap - NODAL EXCHANGE",
+          "symbol": "PPMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-peco-month-on-dap-nodal-exchange",
+          "market_name": "PJM.PECO_month_on_dap - NODAL EXCHANGE",
+          "symbol": "PPMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-ppl-month-off-dap-nodal-exchange",
+          "market_name": "PJM.PPL_month_off_dap - NODAL EXCHANGE",
+          "symbol": "PPMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-pepco-month-on-dap-nodal-exchange",
+          "market_name": "PJM.PEPCO_month_on_dap - NODAL EXCHANGE",
+          "symbol": "PPMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-pepco-month-off-dap-nodal-exchange",
+          "market_name": "PJM.PEPCO_month_off_dap - NODAL EXCHANGE",
+          "symbol": "PPMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-ppl-month-on-dap-nodal-exchange",
+          "market_name": "PJM.PPL_month_on_dap - NODAL EXCHANGE",
+          "symbol": "PPMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-peco-month-off-dap-nodal-exchange",
+          "market_name": "PJM.PECO_month_off_dap - NODAL EXCHANGE",
+          "symbol": "PPMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-n-illinois-hub-mo-off-rtp-nodal-exchange",
+          "market_name": "PJM.N ILLINOIS HUB_mo_off_rtp - NODAL EXCHANGE",
+          "symbol": "PNIH",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-n-illinois-hub-mo-off-dap-nodal-exchange",
+          "market_name": "PJM.N ILLINOIS HUB_mo_off_dap - NODAL EXCHANGE",
+          "symbol": "PNIH",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-n-il-hub-da-peak-ice-futures-energy-div",
+          "market_name": "PJM N. IL HUB DA PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "PNIH",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-n-illinois-hub-mo-on-dap-nodal-exchange",
+          "market_name": "PJM.N ILLINOIS HUB_mo_on_dap - NODAL EXCHANGE",
+          "symbol": "PNIH",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-n-il-hub-rt-peak-ice-futures-energy-div",
+          "market_name": "PJM N. IL HUB RT PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "PNIH",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-n-illinois-hub-mo-on-rtp-nodal-exchange",
+          "market_name": "PJM.N ILLINOIS HUB_mo_on_rtp - NODAL EXCHANGE",
+          "symbol": "PNIH",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-n-il-hub-da-off-pk-ice-futures-energy-div",
+          "market_name": "PJM N. IL HUB DA OFF-PK - ICE FUTURES ENERGY DIV",
+          "symbol": "PNIH",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-ni-hub-rt-off-pk-fixed-ice-futures-energy-div",
+          "market_name": "PJM NI HUB RT OFF-PK FIXED - ICE FUTURES ENERGY DIV",
+          "symbol": "PNHR",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-meted-month-off-dap-nodal-exchange",
+          "market_name": "PJM.METED_month_off_dap - NODAL EXCHANGE",
+          "symbol": "PMMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-meted-month-on-dap-nodal-exchange",
+          "market_name": "PJM.METED_month_on_dap - NODAL EXCHANGE",
+          "symbol": "PMMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-jcpl-month-on-dap-nodal-exchange",
+          "market_name": "PJM.JCPL_month_on_dap - NODAL EXCHANGE",
+          "symbol": "PJMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-jcpl-month-off-dap-nodal-exchange",
+          "market_name": "PJM.JCPL_month_off_dap - NODAL EXCHANGE",
+          "symbol": "PJMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-bge-month-on-dap-nodal-exchange",
+          "market_name": "PJM.BGE_month_on_dap - NODAL EXCHANGE",
+          "symbol": "PBMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-bge-month-off-dap-nodal-exchange",
+          "market_name": "PJM.BGE_month_off_dap - NODAL EXCHANGE",
+          "symbol": "PBMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-aep-month-on-dap-nodal-exchange",
+          "market_name": "PJM.AEP_month_on_dap - NODAL EXCHANGE",
+          "symbol": "PAMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-aep-dayton-rt-peak-fixed-ice-futures-energy-div",
+          "market_name": "PJM AEP DAYTON RT PEAK FIXED - ICE FUTURES ENERGY DIV",
+          "symbol": "PADR",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-aep-dayton-rt-off-pk-fixed-ice-futures-energy-div",
+          "market_name": "PJM AEP DAYTON RT OFF-PK FIXED - ICE FUTURES ENERGY DIV",
+          "symbol": "PADR",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-aep-dayton-hub-da-off-pk-ice-futures-energy-div",
+          "market_name": "PJM AEP DAYTON HUB DA OFF-PK - ICE FUTURES ENERGY DIV",
+          "symbol": "PADH",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-aep-dayton-hub-mo-off-dap-nodal-exchange",
+          "market_name": "PJM.AEP-DAYTON HUB_mo_off_dap - NODAL EXCHANGE",
+          "symbol": "PADH",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-aep-dayton-hub-mo-off-rtp-nodal-exchange",
+          "market_name": "PJM.AEP-DAYTON HUB_mo_off_rtp - NODAL EXCHANGE",
+          "symbol": "PADH",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-aep-dayton-hub-mo-on-dap-nodal-exchange",
+          "market_name": "PJM.AEP-DAYTON HUB_mo_on_dap - NODAL EXCHANGE",
+          "symbol": "PADH",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-aep-dayton-hub-mo-on-rtp-nodal-exchange",
+          "market_name": "PJM.AEP-DAYTON HUB_mo_on_rtp - NODAL EXCHANGE",
+          "symbol": "PADH",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-aep-dayton-da-peak-ice-futures-energy-div",
+          "market_name": "PJM AEP DAYTON DA PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "PADD",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nyiso-zone-g-da-peak-ice-futures-energy-div",
+          "market_name": "NYISO ZONE G DA PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "NZGD",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nyiso-zone-g-da-off-pk-ice-futures-energy-div",
+          "market_name": "NYISO ZONE G DA OFF-PK - ICE FUTURES ENERGY DIV",
+          "symbol": "NZGD",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nyiso-zone-a-da-off-pk-fix-pr-ice-futures-energy-div",
+          "market_name": "NYISO ZONE A DA OFF-PK FIX PR - ICE FUTURES ENERGY DIV",
+          "symbol": "NZAD",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nyiso-zone-a-da-peak-ice-futures-energy-div",
+          "market_name": "NYISO ZONE A DA PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "NZAD",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nyiso-west-month-on-dap-nodal-exchange",
+          "market_name": "NYISO.WEST_month_on_dap - NODAL EXCHANGE",
+          "symbol": "NWMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nyiso-west-month-off-dap-nodal-exchange",
+          "market_name": "NYISO.WEST_month_off_dap - NODAL EXCHANGE",
+          "symbol": "NWMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nyiso-n-y-c-month-on-dap-nodal-exchange",
+          "market_name": "NYISO.N.Y.C._month_on_dap - NODAL EXCHANGE",
+          "symbol": "NNYC",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nyiso-n-y-c-month-off-dap-nodal-exchange",
+          "market_name": "NYISO.N.Y.C._month_off_dap - NODAL EXCHANGE",
+          "symbol": "NNYC",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nyiso-hud-vl-month-off-dap-nodal-exchange",
+          "market_name": "NYISO.HUD VL_month_off_dap - NODAL EXCHANGE",
+          "symbol": "NHVM",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nyiso-hud-vl-month-on-dap-nodal-exchange",
+          "market_name": "NYISO.HUD VL_month_on_dap - NODAL EXCHANGE",
+          "symbol": "NHVM",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "miso-in-real-time-off-peak-ice-futures-energy-div",
+          "market_name": "MISO IN. REAL-TIME OFF-PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "MIRT",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "miso-indiana-off-peak-ice-futures-energy-div",
+          "market_name": "MISO INDIANA  OFF-PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "MIOP",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "miso-indiana-hub-rt-peak-ice-futures-energy-div",
+          "market_name": "MISO INDIANA HUB RT PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "MIHR",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "miso-indiana-hub-month-on-dap-nodal-exchange",
+          "market_name": "MISO.INDIANA.HUB_month_on_dap - NODAL EXCHANGE",
+          "symbol": "MIHM",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "miso-indiana-hub-month-off-rtp-nodal-exchange",
+          "market_name": "MISO.INDIANA.HUB_month_off_rtp - NODAL EXCHANGE",
+          "symbol": "MIHM",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "miso-in-day-ahead-peak-ice-futures-energy-div",
+          "market_name": "MISO IN. DAY-AHEAD PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "MIDA",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "mid-c-day-ahead-peak-ice-futures-energy-div",
+          "market_name": "MID-C DAY-AHEAD PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "MCDA",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "mid-c-day-ahead-off-peak-ice-futures-energy-div",
+          "market_name": "MID-C DAY-AHEAD OFF-PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "MCDA",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "iso-ne-mass-hub-da-peak-ice-futures-energy-div",
+          "market_name": "ISO NE MASS HUB DA PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "INMH",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "iso-ne-mass-hub-da-off-pk-fixd-ice-futures-energy-div",
+          "market_name": "ISO NE MASS HUB DA OFF-PK FIXD - ICE FUTURES ENERGY DIV",
+          "symbol": "INMH",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "isone-h-internal-hub-mo-on-dap-nodal-exchange",
+          "market_name": "ISONE.H.INTERNAL_HUB_mo_on_dap - NODAL EXCHANGE",
+          "symbol": "IHIH",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "isone-h-internal-hb-mo-off-dap-nodal-exchange",
+          "market_name": "ISONE.H.INTERNAL_HB_mo_off_dap - NODAL EXCHANGE",
+          "symbol": "IHIH",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ercot-west-345k-rt-off-peak-ice-futures-energy-div",
+          "market_name": "ERCOT WEST 345K RT OFF-PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "EW3R",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ercot-west-345kv-rt-peak-ice-futures-energy-div",
+          "market_name": "ERCOT WEST 345KV RT PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "EW3R",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ercot-south-monthly-offpeak-ice-futures-energy-div",
+          "market_name": "ERCOT-SOUTH MONTHLY OFFPEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "ESMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ercot-south-345-kv-rt-peak-fix-ice-futures-energy-div",
+          "market_name": "ERCOT SOUTH 345 KV RT PEAK FIX - ICE FUTURES ENERGY DIV",
+          "symbol": "ES3K",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ercot-north-monthly-off-peak-ice-futures-energy-div",
+          "market_name": "ERCOT - NORTH MONTHLY OFF-PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "ERCOT",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ercot-north-345kv-rt-pk-fix-ice-futures-energy-div",
+          "market_name": "ERCOT NORTH 345KV RT PK FIX - ICE FUTURES ENERGY DIV",
+          "symbol": "EN3R",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ercot-n-345kv-real-t-pk-daly-m-ice-futures-energy-div",
+          "market_name": "ERCOT N 345KV REAL T PK DALY M - ICE FUTURES ENERGY DIV",
+          "symbol": "EN3R",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ercot-n-345kv-real-t-pk-2x16-ice-futures-energy-div",
+          "market_name": "ERCOT N 345KV REAL T PK 2x16 - ICE FUTURES ENERGY DIV",
+          "symbol": "EN3R",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ercot-north-345kv-hub-rt-7x16-ice-futures-energy-div",
+          "market_name": "ERCOT North 345KV Hub RT 7x16 - ICE FUTURES ENERGY DIV",
+          "symbol": "EN3H",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ercot-north-345kv-hub-rt-7x8-ice-futures-energy-div",
+          "market_name": "ERCOT North 345KV Hub RT 7x8 - ICE FUTURES ENERGY DIV",
+          "symbol": "EN3H",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ercot-hb-north-month-off-rtp-nodal-exchange",
+          "market_name": "ERCOT.HB_NORTH_month_off_rtp - NODAL EXCHANGE",
+          "symbol": "EHNM",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ercot-hb-north-month-on-rtp-nodal-exchange",
+          "market_name": "ERCOT.HB_NORTH_month_on_rtp - NODAL EXCHANGE",
+          "symbol": "EHNM",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ercot-houston-345kv-rt-off-fix-ice-futures-energy-div",
+          "market_name": "ERCOT Houston 345KV RT OFF FIX - ICE FUTURES ENERGY DIV",
+          "symbol": "EH3R",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "ercot-houston-345kv-rt-pk-fix-ice-futures-energy-div",
+          "market_name": "ERCOT HOUSTON 345KV RT PK FIX - ICE FUTURES ENERGY DIV",
+          "symbol": "EH3R",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "caiso-sp-15-da-off-pk-fixed-ice-futures-energy-div",
+          "market_name": "CAISO SP-15 DA OFF-PK FIXED - ICE FUTURES ENERGY DIV",
+          "symbol": "CS1D",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "caiso-np-15-peak-ice-futures-energy-div",
+          "market_name": "CAISO NP-15 PEAK - ICE FUTURES ENERGY DIV",
+          "symbol": "CN1P",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "caiso-np-15-da-off-pk-fixed-ice-futures-energy-div",
+          "market_name": "CAISO NP-15 DA OFF-PK FIXED - ICE FUTURES ENERGY DIV",
+          "symbol": "CN1D",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-western-hub-month-on-dap-nodal-exchange",
+          "market_name": "PJM.WESTERN HUB_month_on_dap - NODAL EXCHANGE",
+          "symbol": "PWHM",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-07",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-pseg-month-on-dap-nodal-exchange",
+          "market_name": "PJM.PSEG_month_on_dap - NODAL EXCHANGE",
+          "symbol": "PPMO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-07",
+          "has_price_data": false
+        },
+        {
+          "market_key": "palo-verde-da-off-pk-ice-futures-energy-div",
+          "market_name": "PALO VERDE DA OFF-PK - ICE FUTURES ENERGY DIV",
+          "symbol": "PVDO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2020-06-02",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-ni-hub-rt-off-pk-ice-futures-energy-div",
+          "market_name": "PJM NI HUB RT OFF-PK - ICE FUTURES ENERGY DIV",
+          "symbol": "PNHR",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2020-06-02",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-aep-dayton-rt-off-pk-ice-futures-energy-div",
+          "market_name": "PJM AEP DAYTON RT OFF-PK - ICE FUTURES ENERGY DIV",
+          "symbol": "PADR",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2020-06-02",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nyiso-zone-a-da-off-pk-ice-futures-energy-div",
+          "market_name": "NYISO ZONE A DA OFF-PK - ICE FUTURES ENERGY DIV",
+          "symbol": "NZAD",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2020-06-02",
+          "has_price_data": false
+        },
+        {
+          "market_key": "iso-ne-mass-hub-da-off-pk-ice-futures-energy-div",
+          "market_name": "ISO NE MASS HUB DA OFF-PK - ICE FUTURES ENERGY DIV",
+          "symbol": "INMH",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2020-06-02",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-western-hub-rt-off-pk-mini-ice-futures-energy-div",
+          "market_name": "PJM WESTERN HUB RT OFF-PK MINI - ICE FUTURES ENERGY DIV",
+          "symbol": "PWHR",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2017-05-09",
+          "has_price_data": false
+        },
+        {
+          "market_key": "miso-in-realtime-offpeak-mini-ice-futures-energy-div",
+          "market_name": "MISO IN. REALTIME OFFPEAK-MINI - ICE FUTURES ENERGY DIV",
+          "symbol": "MIRO",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2017-05-09",
+          "has_price_data": false
+        },
+        {
+          "market_key": "miso-indiana-hub-rt-peak-mini-ice-futures-energy-div",
+          "market_name": "MISO INDIANA HUB RT PEAK MINI - ICE FUTURES ENERGY DIV",
+          "symbol": "MIHR",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2017-05-09",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-western-hub-rt-off-5-mw-new-york-mercantile-exchange",
+          "market_name": "PJM WESTERN HUB RT OFF 5 MW - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "PWHR",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2017-04-25",
+          "has_price_data": false
+        },
+        {
+          "market_key": "palo-verde-ice-futures-energy-div",
+          "market_name": "PALO VERDE - ICE FUTURES ENERGY DIV",
+          "symbol": "PV",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2014-10-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nyiso-zone-g-ice-futures-energy-div",
+          "market_name": "NYISO ZONE  G - ICE FUTURES ENERGY DIV",
+          "symbol": "NZG",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2014-10-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nyiso-zone-a-ice-futures-energy-div",
+          "market_name": "NYISO ZONE  A - ICE FUTURES ENERGY DIV",
+          "symbol": "NZA",
+          "category": "Electricity",
+          "price_ticker": null,
+          "latest_report_date": "2014-10-14",
+          "has_price_data": false
+        }
+      ]
+    },
+    {
+      "name": "Metals and Other",
+      "markets": [
+        {
+          "market_key": "tx-rec-crs-v26-back-half-nodal-exchange",
+          "market_name": "TX REC CRS V26 BACK HALF - NODAL EXCHANGE",
+          "symbol": "TRCV",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "tx-rec-crs-v26-front-half-nodal-exchange",
+          "market_name": "TX REC CRS V26 FRONT HALF - NODAL EXCHANGE",
+          "symbol": "TRCV",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "tx-rec-crs-v27-back-half-nodal-exchange",
+          "market_name": "TX REC CRS V27 BACK HALF - NODAL EXCHANGE",
+          "symbol": "TRCV",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "tx-rec-crs-v27-front-half-nodal-exchange",
+          "market_name": "TX REC CRS V27 FRONT HALF - NODAL EXCHANGE",
+          "symbol": "TRCV",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "tx-rec-crs-v28-back-half-nodal-exchange",
+          "market_name": "TX REC CRS V28 BACK HALF - NODAL EXCHANGE",
+          "symbol": "TRCV",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "tx-rec-crs-v28-front-half-nodal-exchange",
+          "market_name": "TX REC CRS V28 FRONT HALF - NODAL EXCHANGE",
+          "symbol": "TRCV",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "tx-rec-crs-v29-front-half-nodal-exchange",
+          "market_name": "TX REC CRS V29 FRONT HALF - NODAL EXCHANGE",
+          "symbol": "TRCV",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "tx-rec-crs-v29-back-half-nodal-exchange",
+          "market_name": "TX REC CRS V29 BACK HALF - NODAL EXCHANGE",
+          "symbol": "TRCV",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "silver-commodity-exchange-inc",
+          "market_name": "SILVER - COMMODITY EXCHANGE INC.",
+          "symbol": "SI",
+          "category": "Metals and Other",
+          "price_ticker": "SI=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "steel-hrc-commodity-exchange-inc",
+          "market_name": "STEEL-HRC - COMMODITY EXCHANGE INC.",
+          "symbol": "SH",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-tri-recs-class-1-ice-futures-energy-div",
+          "market_name": "PJM TRI-RECs CLASS 1 - ICE FUTURES ENERGY DIV",
+          "symbol": "PTRC",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pa-solar-alter-energy-credit-ice-futures-energy-div",
+          "market_name": "PA SOLAR ALTER ENERGY CREDIT - ICE FUTURES ENERGY DIV",
+          "symbol": "PSAE",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "platinum-new-york-mercantile-exchange",
+          "market_name": "PLATINUM - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "PLATIN",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pa-compliance-aecs-tier1-ice-futures-energy-div",
+          "market_name": "PA COMPLIANCE AECs TIER1 - ICE FUTURES ENERGY DIV",
+          "symbol": "PCAT",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pennsylvania-aec-tier-2-v2026-nodal-exchange",
+          "market_name": "PENNSYLVANIA AEC TIER 2-V2026 - NODAL EXCHANGE",
+          "symbol": "PAT2",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "palladium-new-york-mercantile-exchange",
+          "market_name": "PALLADIUM - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "PALLAD",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nj-srecs-ice-futures-energy-div",
+          "market_name": "NJ SRECS - ICE FUTURES ENERGY DIV",
+          "symbol": "NS",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "north-euro-hot-roll-coil-steel-commodity-exchange-inc",
+          "market_name": "NORTH EURO HOT-ROLL COIL STEEL - COMMODITY EXCHANGE INC.",
+          "symbol": "NEHR",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "nepool-dual-recs-class-1-ice-futures-energy-div",
+          "market_name": "NEPOOL DUAL RECs CLASS 1 - ICE FUTURES ENERGY DIV",
+          "symbol": "NDRC",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "mass-compliance-recs-class-1-ice-futures-energy-div",
+          "market_name": "MASS COMPLIANCE RECs CLASS 1 - ICE FUTURES ENERGY DIV",
+          "symbol": "MCRC",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "lumber-chicago-mercantile-exchange",
+          "market_name": "LUMBER - CHICAGO MERCANTILE EXCHANGE",
+          "symbol": "LUMBER",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "lithium-hydroxide-commodity-exchange-inc",
+          "market_name": "LITHIUM HYDROXIDE - COMMODITY EXCHANGE INC.",
+          "symbol": "LH",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "copper-1-commodity-exchange-inc",
+          "market_name": "COPPER- #1 - COMMODITY EXCHANGE INC.",
+          "symbol": "HG",
+          "category": "Metals and Other",
+          "price_ticker": "HG=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "gold-commodity-exchange-inc",
+          "market_name": "GOLD - COMMODITY EXCHANGE INC.",
+          "symbol": "GC",
+          "category": "Metals and Other",
+          "price_ticker": "GC=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": true
+        },
+        {
+          "market_key": "micro-gold-commodity-exchange-inc",
+          "market_name": "MICRO GOLD - COMMODITY EXCHANGE INC.",
+          "symbol": "GC",
+          "category": "Metals and Other",
+          "price_ticker": "GC=F",
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "d6-rins-opis-current-year-ice-futures-energy-div",
+          "market_name": "D6 RINs OPIS CURRENT YEAR - ICE FUTURES ENERGY DIV",
+          "symbol": "DROC",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "d4-biodiesel-rins-opis-curr-yr-ice-futures-energy-div",
+          "market_name": "D4 BIODIESEL RINs OPIS CURR YR - ICE FUTURES ENERGY DIV",
+          "symbol": "DBRO",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "cobalt-commodity-exchange-inc",
+          "market_name": "COBALT - COMMODITY EXCHANGE INC.",
+          "symbol": "COBALT",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "calif-low-carbon-fsc-opis-ice-futures-energy-div",
+          "market_name": "CALIF LOW CARBON FSC-OPIS - ICE FUTURES ENERGY DIV",
+          "symbol": "CLCF",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "calif-carbon-current-auction-ice-futures-energy-div",
+          "market_name": "CALIF CARBON CURRENT AUCTION - ICE FUTURES ENERGY DIV",
+          "symbol": "CCCA",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "calif-carbon-all-vintage-2026-ice-futures-energy-div",
+          "market_name": "CALIF CARBON ALL VINTAGE 2026 - ICE FUTURES ENERGY DIV",
+          "symbol": "CCAV",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "aluminum-mwp-commodity-exchange-inc",
+          "market_name": "ALUMINUM MWP - COMMODITY EXCHANGE INC.",
+          "symbol": "AM",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "aluminium-euro-prem-duty-paid-commodity-exchange-inc",
+          "market_name": "ALUMINIUM EURO PREM DUTY-PAID - COMMODITY EXCHANGE INC.",
+          "symbol": "AEPD",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-04-14",
+          "has_price_data": false
+        },
+        {
+          "market_key": "tx-green-e-rec-v25-back-half-nodal-exchange",
+          "market_name": "TX GREEN-E REC V25 BACK HALF - NODAL EXCHANGE",
+          "symbol": "TGER",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-03-24",
+          "has_price_data": false
+        },
+        {
+          "market_key": "aluminum-commodity-exchange-inc",
+          "market_name": "ALUMINUM - COMMODITY EXCHANGE INC.",
+          "symbol": "ALUMIN",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2026-02-03",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-tri-recs-class-1-prior-yr-ice-futures-energy-div",
+          "market_name": "PJM TRI-RECs CLASS 1 PRIOR YR - ICE FUTURES ENERGY DIV",
+          "symbol": "PTRC",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2024-07-23",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-tri-recs-class-1-vin-2020-ice-futures-energy-div",
+          "market_name": "PJM TRI-RECs CLASS 1 Vin 2020 - ICE FUTURES ENERGY DIV",
+          "symbol": "PTRC",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2019-05-28",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-tri-recs-class-1-vin-2021-ice-futures-energy-div",
+          "market_name": "PJM TRI-RECs CLASS 1 Vin 2021 - ICE FUTURES ENERGY DIV",
+          "symbol": "PTRC",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2019-05-28",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-tri-recs-class-1-vin-2019-ice-futures-energy-div",
+          "market_name": "PJM TRI-RECs CLASS 1 Vin 2019 - ICE FUTURES ENERGY DIV",
+          "symbol": "PTRC",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2019-05-28",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-tri-recs-class-1-vin-2018-ice-futures-energy-div",
+          "market_name": "PJM TRI-RECs CLASS 1 Vin 2018 - ICE FUTURES ENERGY DIV",
+          "symbol": "PTRC",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2018-07-24",
+          "has_price_data": false
+        },
+        {
+          "market_key": "pjm-tri-recs-class-1-vin-2017-ice-futures-energy-div",
+          "market_name": "PJM TRI-RECs CLASS 1 Vin 2017 - ICE FUTURES ENERGY DIV",
+          "symbol": "PTRC",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2017-07-25",
+          "has_price_data": false
+        },
+        {
+          "market_key": "aluminum-new-york-mercantile-exchange",
+          "market_name": "ALUMINUM - NEW YORK MERCANTILE EXCHANGE",
+          "symbol": "ALUMIN",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "2000-02-22",
+          "has_price_data": false
+        },
+        {
+          "market_key": "silver-chicago-board-of-trade",
+          "market_name": "SILVER - CHICAGO BOARD OF TRADE",
+          "symbol": "SILVER",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "1993-02-02",
+          "has_price_data": false
+        },
+        {
+          "market_key": "platinum-commodity-exchange-inc",
+          "market_name": "PLATINUM - COMMODITY EXCHANGE INC.",
+          "symbol": "PL",
+          "category": "Metals and Other",
+          "price_ticker": "PL=F",
+          "latest_report_date": "1992-12-15",
+          "has_price_data": false
+        },
+        {
+          "market_key": "gold-international-monetary-market",
+          "market_name": "GOLD - INTERNATIONAL MONETARY MARKET",
+          "symbol": "GOLD",
+          "category": "Metals and Other",
+          "price_ticker": null,
+          "latest_report_date": "1987-11-13",
+          "has_price_data": false
+        }
+      ]
+    }
+  ]
+}

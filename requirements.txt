@@ -1,0 +1,6 @@
+cot_reports
+flask
+flask-cors
+yfinance
+tvdatafeed  # Fallback to fetch from TradingView (e.g., DXY)
+MetaTrader5  # For fetching DXY from MT5
