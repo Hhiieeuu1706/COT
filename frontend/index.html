@@ -537,7 +537,7 @@
         if (!response.ok) {
           throw new Error(`Refresh failed with status ${response.status}`);
         }
-        await loadCatalog(true);
+        await loadCatalog();
         if (state.selectedMarketKey) {
           await loadMarket(state.selectedMarketKey, true);
         }
@@ -722,7 +722,10 @@
         }
         state.isFetchingPrice = false;
         renderChart(state.selectedSeries);
-        startSeriesWatcher(marketKey, state.selectedSeries.updated_at);
+        if (state.selectedSeries.refresh_state?.running ||
+            state.selectedSeries.refresh_state?.cached_updated_at > state.selectedSeries.updated_at) {
+          startSeriesWatcher(marketKey, state.selectedSeries.updated_at);
+        }
       } catch (error) {
         if (requestId !== state.loadRequestId) {
           return;
@@ -767,18 +770,20 @@
           if (latest && latest > currentUpdatedAt) {
             stopSeriesWatcher();
             await loadMarket(marketKey, false);
+          } else if (!status.running) {
+            stopSeriesWatcher();
           }
         } catch {
           // Silent poll error; next interval will retry.
         }
-      }, 6000);
+      }, 1000);
     }
 
 
 
     function renderChart(payload) {
       marketTitle.textContent = payload.market_name;
-      marketSubtitle.textContent = `${payload.category} | ${payload.price_ticker || 'Price overlay unavailable'} | Updated ${new Date(payload.updated_at).toLocaleString()}`;
+      marketSubtitle.textContent = `${payload.category} | ${payload.price_source || payload.price_ticker || 'Price overlay unavailable'} | Updated ${new Date(payload.updated_at).toLocaleString()}`;
       
       // Build data check lines
       const dataChecksEl = document.getElementById('data-checks');
@@ -860,7 +865,7 @@
           y: priceValues,
           type: 'scatter',
           mode: 'lines',
-          name: payload.price_ticker,
+          name: payload.price_source || payload.price_ticker,
           line: { color: '#1c7ed6', width: 2 },
           xaxis: 'x',
           yaxis: 'y2',

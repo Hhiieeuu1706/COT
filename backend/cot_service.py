@@ -4,6 +4,9 @@ import io
 import json
 import sqlite3
 import zipfile
+from concurrent.futures import ThreadPoolExecutor
+from functools import lru_cache
+from tempfile import NamedTemporaryFile
 import logging
 from dataclasses import dataclass
 from datetime import datetime, timedelta
@@ -47,6 +50,7 @@ COT_PAYLOAD_MEMO: Dict[str, Any] = {"stamp": None, "payload": None}
 COT_RECORDS_MEMO: Dict[str, Any] = {"stamp": None, "df": None}
 SERIES_CACHE_DB_READY = False
 COT_REFRESH_LOCK = Lock()
+PRICE_CACHE_LOCK = Lock()
 
 REPORT_DOWNLOAD_SPECS: Dict[str, Dict[str, Dict[str, str]]] = {
     "legacy_fut": {
@@ -98,7 +102,15 @@ def _read_json(path: Path) -> Dict[str, Any]:
 
 def _write_json(path: Path, payload: Dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    encoded = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+    with NamedTemporaryFile(mode="w", encoding="utf-8", dir=path.parent, delete=False) as handle:
+        temp_path = Path(handle.name)
+        try:
+            handle.write(encoded)
+            handle.close()
+            temp_path.replace(path)
+        finally:
+            temp_path.unlink(missing_ok=True)
 
 
 def _parse_timestamp(timestamp_text: Optional[str]) -> Optional[datetime]:
@@ -118,7 +130,7 @@ def _is_fresh(timestamp_text: Optional[str], max_age: timedelta) -> bool:
 
 
 def _read_cot_zip_csv(url: str, expected_member_name: str) -> pd.DataFrame:
-    response = requests.get(url, timeout=120)
+    response = requests.get(url, timeout=(5, 20))
     response.raise_for_status()
 
     with zipfile.ZipFile(io.BytesIO(response.content)) as archive:
@@ -142,22 +154,38 @@ def _read_cot_zip_csv(url: str, expected_member_name: str) -> pd.DataFrame:
 
 def _fetch_cot_history(report_type: str) -> pd.DataFrame:
     spec = REPORT_DOWNLOAD_SPECS[report_type]["history"]
-    url = f"https://cftc.gov/files/dea/history/{spec['url_end']}.zip"
+    url = f"https://www.cftc.gov/files/dea/history/{spec['url_end']}.zip"
     return _read_cot_zip_csv(url, spec["member"])
 
 
 def _fetch_cot_year(year: int, report_type: str) -> pd.DataFrame:
     spec = REPORT_DOWNLOAD_SPECS[report_type]["yearly"]
-    url = f"https://cftc.gov/files/dea/history/{spec['prefix']}{year}.zip"
+    url = f"https://www.cftc.gov/files/dea/history/{spec['prefix']}{year}.zip"
     return _read_cot_zip_csv(url, spec["member"])
 
 
 def _fetch_all_cot_data(report_type: str) -> pd.DataFrame:
-    frames = [_fetch_cot_history(report_type)]
-    current_year = datetime.utcnow().year
-    for year in range(2017, current_year + 1):
-        frames.append(_fetch_cot_year(year, report_type))
-    return pd.concat(frames, ignore_index=True)
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        history = pool.submit(_fetch_cot_history, report_type)
+        yearly_frames = pool.map(
+            lambda year: _fetch_cot_year(year, report_type),
+            range(2017, datetime.utcnow().year + 1),
+        )
+        return pd.concat([history.result(), *yearly_frames], ignore_index=True)
+
+
+@lru_cache(maxsize=4096)
+def _market_metadata(name: str) -> tuple:
+    return slugify_market_name(name), categorize_market_strict(name), infer_price_ticker(name)
+
+
+def _add_market_metadata(df: pd.DataFrame) -> None:
+    names = df["market_name"]
+    metadata = {name: _market_metadata(name) for name in names.unique()}
+    for index, column in enumerate(("market_key", "category", "price_ticker")):
+        values = names.map({name: market[index] for name, market in metadata.items()})
+        df[column] = values.astype(object).where(values.notna(), None)
+
 
 
 def _build_normalized_df_from_cached_records(records: List[Dict[str, Any]]) -> pd.DataFrame:
@@ -167,37 +195,31 @@ def _build_normalized_df_from_cached_records(records: List[Dict[str, Any]]) -> p
     cached_df["report_date"] = pd.to_datetime(cached_df["report_date"], errors="coerce")
     cached_df = cached_df.dropna(subset=["report_date", "market_name"])
     cached_df["market_name"] = cached_df["market_name"].astype(str).str.strip()
-    cached_df["market_key"] = cached_df["market_name"].map(slugify_market_name)
-    cached_df["category"] = cached_df["market_name"].map(categorize_market_strict)
-    cached_df["price_ticker"] = cached_df["market_name"].map(infer_price_ticker)
+    _add_market_metadata(cached_df)
     if "noncommercial_net" not in cached_df.columns:
         cached_df["noncommercial_net"] = pd.to_numeric(cached_df["noncommercial_long"], errors="coerce") - pd.to_numeric(cached_df["noncommercial_short"], errors="coerce")
     return cached_df
 
 
-def _refresh_cot_cache_from_existing_records(cached_records: List[Dict[str, Any]]) -> Dict[str, Any]:
+def _refresh_cot_cache_from_existing_records(cached: Dict[str, Any]) -> Dict[str, Any]:
+    cached_records = cached["records"]
+    latest_rows = cached.get("latest_markets") or cached_records
+    latest_date = pd.Timestamp(max(row["report_date"] for row in latest_rows))
+    years_to_check = range(latest_date.year, datetime.utcnow().year + 1)
+
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        year_frames = pool.map(lambda year: _fetch_cot_year(year, REPORT_TYPE), years_to_check)
+        normalized = [_normalize_cot_dataframe(raw) for raw in year_frames]
+    incremental = [frame.loc[frame["report_date"] > latest_date] for frame in normalized]
+    incremental = [frame for frame in incremental if not frame.empty]
+    if not incremental:
+        return {**cached, "updated_at": datetime.utcnow().isoformat()}
+
     cached_df = _build_normalized_df_from_cached_records(cached_records)
-    if cached_df.empty:
-        raise ValueError("Cached COT payload has no usable records")
-
-    latest_date = cached_df["report_date"].max()
-    years_to_check = sorted({int(latest_date.year), datetime.utcnow().year})
-
-    incremental_frames: List[pd.DataFrame] = []
-    for year in years_to_check:
-        year_raw = _fetch_cot_year(year=year, report_type=REPORT_TYPE)
-        year_df = _normalize_cot_dataframe(year_raw)
-        year_df = year_df[year_df["report_date"] > latest_date]
-        if not year_df.empty:
-            incremental_frames.append(year_df)
-
-    if incremental_frames:
-        merged = pd.concat([cached_df, *incremental_frames], ignore_index=True)
-        merged = merged.sort_values(["market_name", "report_date"])
-        merged = merged.drop_duplicates(subset=["market_name", "report_date"], keep="last")
-        return _build_cot_payload(merged)
-
-    return _build_cot_payload(cached_df)
+    merged = pd.concat([cached_df, *incremental], ignore_index=True)
+    merged = merged.sort_values(["market_name", "report_date"])
+    merged = merged.drop_duplicates(subset=["market_name", "report_date"], keep="last")
+    return _build_cot_payload(merged)
 
 
 def _ensure_series_cache_db() -> None:
@@ -301,9 +323,7 @@ def _normalize_cot_dataframe(raw_df: pd.DataFrame) -> pd.DataFrame:
         df[column] = pd.to_numeric(df[column], errors="coerce")
     df = df.dropna(subset=["market_name", "report_date"])
     df["market_name"] = df["market_name"].astype(str).str.strip()
-    df["market_key"] = df["market_name"].map(slugify_market_name)
-    df["category"] = df["market_name"].map(categorize_market_strict)
-    df["price_ticker"] = df["market_name"].map(infer_price_ticker)
+    _add_market_metadata(df)
     df["noncommercial_net"] = df["noncommercial_long"] - df["noncommercial_short"]
     df = df.sort_values(["market_name", "report_date"])
     df = df.drop_duplicates(subset=["market_name", "report_date"], keep="last")
@@ -320,20 +340,14 @@ def _build_cot_payload(normalized: pd.DataFrame) -> Dict[str, Any]:
     }
 
 
-def refresh_cot_cache(force: bool = False) -> Dict[str, Any]:
+def refresh_cot_cache(force: bool = False, *, allow_stale: bool = True) -> Dict[str, Any]:
     if not force and COT_PAYLOAD_MEMO.get("payload") is not None:
         memo_payload = COT_PAYLOAD_MEMO["payload"]
         if _is_fresh(memo_payload.get("updated_at"), CACHE_MAX_AGE):
             return memo_payload
 
-    cached = _read_json(COT_CACHE_PATH)
-    if not force and _is_fresh(cached.get("updated_at"), CACHE_MAX_AGE):
-        COT_PAYLOAD_MEMO["stamp"] = cached.get("updated_at")
-        COT_PAYLOAD_MEMO["payload"] = cached
-        return cached
-
     with COT_REFRESH_LOCK:
-        cached = _read_json(COT_CACHE_PATH)
+        cached = COT_PAYLOAD_MEMO["payload"] or _read_json(COT_CACHE_PATH)
 
         if not force and _is_fresh(cached.get("updated_at"), CACHE_MAX_AGE):
             COT_PAYLOAD_MEMO["stamp"] = cached.get("updated_at")
@@ -342,13 +356,14 @@ def refresh_cot_cache(force: bool = False) -> Dict[str, Any]:
 
         if cached.get("records"):
             try:
-                payload = _refresh_cot_cache_from_existing_records(cached.get("records", []))
+                payload = _refresh_cot_cache_from_existing_records(cached)
                 _write_json(COT_CACHE_PATH, payload)
                 COT_PAYLOAD_MEMO["stamp"] = payload.get("updated_at")
                 COT_PAYLOAD_MEMO["payload"] = payload
                 return payload
             except Exception:
-                if cached.get("records"):
+                if allow_stale:
+                    logger.exception("CFTC refresh failed; serving cached COT data")
                     COT_PAYLOAD_MEMO["stamp"] = cached.get("updated_at")
                     COT_PAYLOAD_MEMO["payload"] = cached
                     return cached
@@ -363,13 +378,14 @@ def refresh_cot_cache(force: bool = False) -> Dict[str, Any]:
         return payload
 
 
-def refresh_catalog_cache(force: bool = False) -> Dict[str, Any]:
+def refresh_catalog_cache(force: bool = False, *, cot_payload: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
     cached = _read_json(CATALOG_CACHE_PATH)
     try:
-        cot_payload = refresh_cot_cache(force=force)
+        if cot_payload is None:
+            cot_payload = refresh_cot_cache(force=force, allow_stale=not force)
     except Exception:
         # Never block catalog loading if we still have any cached catalog payload.
-        if cached.get("categories") and cached.get("schema_version") == CATALOG_SCHEMA_VERSION:
+        if not force and cached.get("categories") and cached.get("schema_version") == CATALOG_SCHEMA_VERSION:
             return cached
         raise
 
@@ -419,10 +435,8 @@ def _load_cot_records(force: bool = False) -> pd.DataFrame:
         return df
     df["report_date"] = pd.to_datetime(df["report_date"])
     df["market_name"] = df["market_name"].astype(str).str.strip()
-    df["market_key"] = df["market_name"].map(slugify_market_name)
-    df["category"] = df["market_name"].map(categorize_market_strict)
+    _add_market_metadata(df)
     df = df.dropna(subset=["category"]).copy()
-    df["price_ticker"] = df["market_name"].map(infer_price_ticker)
     if "noncommercial_net" not in df.columns:
         df["noncommercial_net"] = pd.to_numeric(df["noncommercial_long"], errors="coerce") - pd.to_numeric(df["noncommercial_short"], errors="coerce")
     COT_RECORDS_MEMO["stamp"] = stamp
@@ -460,7 +474,9 @@ def _build_catalog_from_latest_rows(latest_rows: List[Dict[str, Any]]) -> Dict[s
             continue
 
         market_key = str(row.get("market_key") or slugify_market_name(market_name))
-        price_ticker = row.get("price_ticker") or infer_price_ticker(market_name)
+        price_ticker = row.get("price_ticker")
+        if not isinstance(price_ticker, str) or not price_ticker:
+            price_ticker = infer_price_ticker(market_name)
         latest_report_date = str(row.get("report_date") or "")
         symbol = _normalize_symbol(market_name, price_ticker)
         
@@ -559,6 +575,8 @@ def _yf_download_with_timeout(ticker: str, start: str, end: str, interval: str, 
                 interval=interval,
                 auto_adjust=True,
                 progress=False,
+                threads=False,
+                timeout=min(timeout_sec, 8),
             )
         except Exception as e:
             result["error"] = str(e)
@@ -659,10 +677,10 @@ def _fetch_from_mt5(symbol: str, start_date: str, end_date: str) -> Optional[pd.
     try:
         # Initialize MT5 with BlackBull path
         mt5_path = r"C:\Program Files\BlackBull Markets MT5\terminal64.exe"
-        if not mt5.initialize(mt5_path):
+        if not mt5.initialize(mt5_path, timeout=5000):
             logger.debug("MT5 initialize failed with BlackBull path")
             # Try without path
-            if not mt5.initialize():
+            if not mt5.initialize(timeout=5000):
                 logger.debug("MT5 initialize failed")
                 return None
 
@@ -723,24 +741,27 @@ def _fetch_price_series(price_ticker: str, start_date: str, end_date: str) -> Li
         logger.warning("Invalid price ticker: %s", price_ticker)
         return []
     
+    source = None
     try:
         # Special handling for DXY - fetch from MT5
         if price_ticker == "DXY=F":
             logger.debug("Fetching DXY from MT5 (with symbol variants)...")  # noqa: F541
             history = _fetch_from_mt5("DXY", start_date, end_date)
             if history is not None and not history.empty:
+                source = "DXY futures (MT5)"
                 logger.info("MT5 SUCCESS for DXY")  # noqa: F541
             else:
                 logger.warning("MT5 failed for DXY, falling back to yfinance")  # noqa: F541
                 # Fallback to yfinance
                 history = _yf_download_with_timeout(
-                    "DXY=F",
+                    "DX-Y.NYB",
                     start=start_date,
                     end=(pd.to_datetime(end_date) + pd.Timedelta(days=7)).strftime("%Y-%m-%d"),
                     interval="1wk",
                     timeout_sec=60,
                 )
                 if history is not None and not history.empty:
+                    source = "U.S. Dollar Index (Yahoo Finance)"
                     logger.info("yfinance fallback SUCCESS for DXY")  # noqa: F541
                 else:
                     logger.warning("yfinance fallback failed for DXY")  # noqa: F541
@@ -821,6 +842,9 @@ def _fetch_price_series(price_ticker: str, start_date: str, end_date: str) -> Li
         for timestamp, value in close_series.items():
             series.append({"date": pd.Timestamp(timestamp).strftime("%Y-%m-%d"), "close": round(float(value), 6)})
         
+        if source and series:
+            series[0]["source"] = source
+
         logger.debug("_fetch_price_series DONE: %d data points returned for %s", len(series), price_ticker)
         return series
     except Exception as e:
@@ -993,13 +1017,7 @@ def get_price_series(
                     )
                     return cached_series
 
-                cache["markets"][market_key] = {
-                    "ticker": price_ticker,
-                    "updated_at": datetime.utcnow().isoformat(),
-                    "series": updated_series,
-                    "_no_data_flag": len(updated_series) == 0,
-                }
-                _write_json(PRICE_CACHE_PATH, cache)
+                _save_price_entry(market_key, price_ticker, updated_series)
                 logger.debug(f"After refresh: {len(updated_series)} rows for {market_key}")
                 return updated_series
             else:
@@ -1019,14 +1037,28 @@ def get_price_series(
     no_data = len(series) == 0
     logger.debug(f"Fetch result for {market_key}: {len(series)} rows, marking no_data={no_data}")
     
-    cache["markets"][market_key] = {
-        "ticker": price_ticker,
-        "updated_at": datetime.utcnow().isoformat(),
-        "series": series,
-        "_no_data_flag": no_data,
-    }
-    _write_json(PRICE_CACHE_PATH, cache)
+    _save_price_entry(market_key, price_ticker, series)
     return series
+
+
+def market_series_needs_refresh(payload: Dict[str, Any]) -> bool:
+    if not _is_fresh(payload.get("updated_at"), PRICE_CACHE_MAX_AGE):
+        return True
+    price_entry = _load_price_cache()["markets"].get(payload["market_key"], {})
+    max_age = timedelta(minutes=15) if price_entry.get("_no_data_flag") else PRICE_CACHE_MAX_AGE
+    return not _is_fresh(price_entry.get("updated_at"), max_age)
+
+
+def _save_price_entry(market_key: str, ticker: str, series: List[Dict[str, Any]]) -> None:
+    with PRICE_CACHE_LOCK:
+        cache = _load_price_cache()
+        cache["markets"][market_key] = {
+            "ticker": ticker,
+            "updated_at": datetime.utcnow().isoformat(),
+            "series": series,
+            "_no_data_flag": not series,
+        }
+        _write_json(PRICE_CACHE_PATH, cache)
 
 
 def get_market_series(market_key: str, force_refresh: bool = False, prefer_cache: bool = True) -> Dict[str, Any]:
@@ -1034,11 +1066,12 @@ def get_market_series(market_key: str, force_refresh: bool = False, prefer_cache
     if prefer_cache and not force_refresh:
         cached_payload = _read_market_series_cache(market_key)
         if cached_payload:
-            return cached_payload
+            cot_payload = COT_PAYLOAD_MEMO["payload"]
+            if cot_payload is None or cached_payload["updated_at"] >= cot_payload["updated_at"]:
+                return cached_payload
 
     # Need to rebuild from COT records
-    df = _load_cot_records(force=force_refresh)
-    df = df.dropna(subset=["category"]).copy()
+    df = _load_cot_records()
     market_df = df[df["market_key"] == market_key].copy()
     if market_df.empty:
         raise KeyError(f"Unknown market key: {market_key}")
@@ -1046,7 +1079,9 @@ def get_market_series(market_key: str, force_refresh: bool = False, prefer_cache
     market_df = market_df.sort_values("report_date")
     market_name = str(market_df.iloc[-1]["market_name"])
     category = str(market_df.iloc[-1]["category"])
-    price_ticker = market_df.iloc[-1].get("price_ticker") or None
+    price_ticker = market_df.iloc[-1].get("price_ticker")
+    if pd.isna(price_ticker):
+        price_ticker = None
     symbol = _normalize_symbol(market_name, price_ticker)
     series = [
         {
@@ -1067,7 +1102,7 @@ def get_market_series(market_key: str, force_refresh: bool = False, prefer_cache
         start_date=series[0]["date"],
         end_date=series[-1]["date"],
         force_refresh=force_refresh,
-        fetch_if_missing=True,
+        fetch_if_missing=force_refresh or not prefer_cache,
     )
 
     payload = {
@@ -1078,6 +1113,7 @@ def get_market_series(market_key: str, force_refresh: bool = False, prefer_cache
         "price_ticker": price_ticker,
         "series": series,
         "price_series": price_series,
+        "price_source": price_series[0].get("source") if price_series else None,
         "updated_at": datetime.utcnow().isoformat(),
     }
     _write_market_series_cache(market_key, payload)

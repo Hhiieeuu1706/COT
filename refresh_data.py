@@ -20,13 +20,13 @@ def main():
     try:
         # Force refresh COT cache from CFTC
         print("📥 Fetching latest COT data from CFTC...")
-        cot_payload = refresh_cot_cache(force=True)
+        cot_payload = refresh_cot_cache(force=True, allow_stale=False)
         num_records = len(cot_payload.get("records", []))
         print(f"✅ COT data refreshed: {num_records} records")
         
         # Refresh catalog which depends on COT data
         print("📋 Refreshing catalog...")
-        catalog = refresh_catalog_cache(force=True)
+        catalog = refresh_catalog_cache(cot_payload=cot_payload)
         num_categories = len(catalog.get("categories", []))
         print(f"✅ Catalog refreshed: {num_categories} categories")
         

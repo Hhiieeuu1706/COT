@@ -1,18 +1,33 @@
 @echo off
-set PYTHON_EXE=e:\Trade folder\Trading_analyze\.venv\Scripts\python.exe
-set APP_PATH=e:\Trade folder\Trading_analyze\COT\backend\app.py
+setlocal
+cd /d "%~dp0"
+set "COT_PYTHON=%~dp0.venv\Scripts\python.exe"
+if not exist "%COT_PYTHON%" (
+    where py >nul 2>&1
+    if errorlevel 1 goto missing_python
+    py -3.12 -m venv .venv
+    if errorlevel 1 goto failed
+)
+"%COT_PYTHON%" -c "import flask, flask_cors, pandas, requests, yfinance" >nul 2>&1
+if errorlevel 1 (
+    "%COT_PYTHON%" -m pip install -r requirements.txt
+    if errorlevel 1 goto failed
+)
 
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$conn = Get-NetTCPConnection -LocalPort 5056 -State Listen -ErrorAction SilentlyContinue; if ($conn) { $conn | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue } }" >nul 2>&1
+powershell -NoProfile -Command "try { if ((Invoke-RestMethod 'http://127.0.0.1:5056/api/health' -TimeoutSec 1).app -eq 'cot') { exit 0 } } catch {}; exit 1"
+if errorlevel 1 start "COT Local Server" /min "%COT_PYTHON%" "%~dp0backend\app.py"
 
-REM Start BlackBull MT5
-start "" "C:\Program Files\BlackBull Markets MT5\terminal64.exe"
+powershell -NoProfile -Command "$cotDeadline = (Get-Date).AddSeconds(12); do { try { if ((Invoke-RestMethod 'http://127.0.0.1:5056/api/health' -TimeoutSec 1).app -eq 'cot') { exit 0 } } catch {}; Start-Sleep -Milliseconds 200 } while ((Get-Date) -lt $cotDeadline); exit 1"
+if errorlevel 1 goto failed
+start "" "http://127.0.0.1:5056"
+exit /b 0
 
-REM Wait a bit for MT5 to start
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Start-Sleep -Seconds 5" >nul 2>&1
+:missing_python
+echo Install 64-bit Python 3.12 with the Python launcher, then run START.bat again.
+pause
+exit /b 1
 
-REM Fetch DX.f data from MT5
-call "%~dp0backend\fetch_dx_mt5.bat" --no-pause
-
-start "COT Local Server" cmd /k ""%PYTHON_EXE%" "%APP_PATH%""
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Start-Sleep -Seconds 3" >nul 2>&1
-start "" http://127.0.0.1:5056
+:failed
+echo COT could not start. Check the COT server window, data\backend.log and port 5056.
+pause
+exit /b 1

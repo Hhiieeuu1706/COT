@@ -9,16 +9,15 @@ import logging
 from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 
-from cot_service import get_catalog, get_market_series, get_market_series_cache_updated_at, refresh_catalog_cache, refresh_cot_cache
+from cot_service import get_catalog, get_market_series, get_market_series_cache_updated_at, refresh_catalog_cache, refresh_cot_cache, market_series_needs_refresh
 from flow_rotation_service import get_flow_rotation_payload, get_symbol_flow_metrics
 
 # Setup logging
-import sys
 log_file = Path(__file__).resolve().parent.parent / "data" / "backend.log"
 log_file.parent.mkdir(parents=True, exist_ok=True)
 
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.INFO,
     format='[%(asctime)s] [%(levelname)s] %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S',
     force=True,
@@ -39,28 +38,6 @@ FRONTEND_DIR = BASE_DIR / "frontend"
 
 app = Flask(__name__, static_folder=str(FRONTEND_DIR), static_url_path="")
 CORS(app)
-
-# Pre-load COT catalog on startup for instant response
-try:
-    print("[STARTUP] Pre-loading COT catalog...")
-    get_catalog()
-    print("[STARTUP] COT catalog loaded into memory cache.")
-
-    # Pre-fetch DXY series immediately so chart has price history from start
-    try:
-        dxy_key = "usd-index-ice-futures-u-s"
-        print(f"[STARTUP] Pre-fetching DXY series for market_key={dxy_key}...")
-        get_market_series(dxy_key, force_refresh=True, prefer_cache=False)
-        print("[STARTUP] DXY series prefetch complete.")
-
-        # Refresh catalog cache so has_price_data is updated for DXY as soon as UI loads
-        from cot_service import refresh_catalog_cache
-        refresh_catalog_cache(force=True)
-        print("[STARTUP] Catalog refreshed after DXY prefetch.")
-    except Exception as e:
-        print(f"[STARTUP] Warning: DXY prefetch failed: {e}")
-except Exception as e:
-    print(f"[STARTUP] Warning: Failed to pre-load catalog: {e}")
 
 SERIES_REFRESH_POOL = ThreadPoolExecutor(max_workers=2)
 SERIES_REFRESH_LOCK = Lock()
@@ -123,7 +100,7 @@ def _schedule_series_refresh(market_key: str) -> None:
 
 @app.get("/api/health")
 def health() -> tuple:
-    return jsonify({"status": "ok"}), 200
+    return jsonify({"status": "ok", "app": "cot"}), 200
 
 
 @app.get("/api/catalog")
@@ -147,7 +124,7 @@ def series(market_key: str) -> tuple:
         return jsonify({"error": "Market not found"}), 404
     
     # Schedule background refresh only on normal load (not force) to keep data fresh
-    if not force:
+    if not force and payload.get("price_ticker") and market_series_needs_refresh(payload):
         _schedule_series_refresh(market_key)
         logger.debug(f"Scheduled background refresh for {market_key}")
     
@@ -166,8 +143,8 @@ def series_refresh_status(market_key: str) -> tuple:
 @app.post("/api/refresh")
 def refresh() -> tuple:
     logger.info(f"POST /api/refresh - forcing COT cache refresh")
-    payload = refresh_cot_cache(force=True)
-    refresh_catalog_cache(force=True)
+    payload = refresh_cot_cache(force=True, allow_stale=False)
+    refresh_catalog_cache(cot_payload=payload)
     logger.info(f"Cache refresh completed: {len(payload.get('records', []))} COT records")
     return jsonify({"status": "ok", "records": len(payload.get("records", []))}), 200
 

@@ -1,10 +1,10 @@
 # COT
 
-Local COT explorer built on top of `cot_reports`.
+Local COT explorer using CFTC Legacy Futures Only reports.
 
 ## What It Does
 
-- Fetches weekly COT data from CFTC using `cot_reports`
+- Fetches weekly COT data from CFTC
 - Focuses on non-commercial long, short, and net positioning
 - Groups markets into categories such as Financial, Metals, Grains, Softs, Livestock, Petroleum and Products, and Natural Gas and Products
 - Shows a shared-time-axis chart with COT positioning on top and product price below
@@ -38,12 +38,9 @@ The goal is to identify whether extreme positioning levels can provide signals a
 - [COT/backend/market_catalog.py](COT/backend/market_catalog.py): Category rules and price ticker mapping
 - [COT/frontend/index.html](COT/frontend/index.html): Local dashboard UI with Plotly charts
 
+## Run Local
 
+1. Install 64-bit Python 3.12 with the Python launcher.
+2. Run [START.bat](START.bat). It creates a local virtual environment on first run and opens http://127.0.0.1:5056 when the server is ready.
 
-
-
-
-- ## Run Local
-
-1. Start the app with [COT/START.bat](COT/START.bat)
-2. The batch file starts the backend and opens `http://127.0.0.1:5056` automatically
+The first load downloads CFTC history. Market charts can display COT positions while the price overlay loads in the background. DXY uses futures prices from MetaTrader 5 when available and otherwise shows the U.S. Dollar Index from Yahoo Finance. The TradingView fallback for supported tickers is available if `tvDatafeed` is installed separately.
